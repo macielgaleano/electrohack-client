@@ -6,6 +6,8 @@ import PublicRoute from "./app/components/Routers/PublicRoute";
 import Login from "./app/components/Login/Login";
 import Register from "./app/components/Register/Register";
 import Home from "./app/components/Home/Home";
+import Cart from "./app/components/Cart";
+import CategoryPage from "./app/components/CategoryPage";
 
 function App() {
   return (
@@ -21,10 +23,27 @@ function App() {
           <PublicRoute
             restricted={false}
             exact
+            path="/cart"
+            component={Cart}
+          ></PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
             path="/registro"
             component={Register}
           ></PublicRoute>
-          <PublicRoute restricted={false} exact path="/" component={Home}></PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/categorias"
+            component={CategoryPage}
+          ></PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/"
+            component={Home}
+          ></PublicRoute>
         </Switch>
       </div>
     </Router>
