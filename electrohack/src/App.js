@@ -49,7 +49,7 @@ function App() {
           <PublicRoute
             restricted={false}
             exact
-            path="/marcas"
+            path="/productos/marcas"
             component={BrandsPage}
           ></PublicRoute>
           <PublicRoute
