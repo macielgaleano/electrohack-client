@@ -8,7 +8,7 @@ const ListOfProducts = () => {
   let listProducts = useSelector((state) => state);
 
   useEffect(() => {
-    fetch("http://localhost:8000/productos")
+    fetch("https://electrohack-server.vercel.app/productos")
       .then((data) => data.json())
       .then((data) => {
         setProducts(data);
@@ -22,7 +22,7 @@ const ListOfProducts = () => {
       <div className="row d-flex">
         {products &&
           products.map((item) => {
-            return <Product item={item}></Product>;
+            return <Product item={item} key={item._id}></Product>;
           })}
       </div>
     </div>
