@@ -35,10 +35,10 @@ export default function CartItem({ item }) {
             />
           </div>
           <div className="col-lg-1 d-flex justify-content-center align-items-center">
-            {item.price}
+            {Math.floor(item.price)}
           </div>
           <div className="col-lg-1 d-flex justify-content-center align-items-center">
-            {item.price * cuantity}
+            {Math.floor(item.price * cuantity)}
           </div>
         </div>
       </div>
