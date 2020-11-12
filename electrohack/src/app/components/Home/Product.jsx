@@ -1,40 +1,28 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { makeStyles } from "@material-ui/core/styles";
+import { green } from "@material-ui/core/colors";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./home.css";
-import GridList from "@material-ui/core/GridList";
-import IconButton from "@material-ui/core/IconButton";
-import InfoIcon from "@material-ui/icons/Info";
 
 export default function Product({ item }) {
-  console.log(item);
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-around",
-      overflow: "hidden",
-      backgroundColor: theme.palette.background.paper,
-    },
-    gridList: {},
-    icon: {
-      color: "rgba(255, 255, 255, 0.54)",
-    },
-  }));
-  const classes = useStyles();
-
   return (
-    <GridList>
-      <img src={item.pictures[0]} alt={item.name} />
-      {/* <GridList
-        title={list.title}
-        subtitle={<span>by: {list.description}</span>}
-        actionIcon={
-          <IconButton aria-label={`info about ${list.title}`} className={classes.icon}>
-            <InfoIcon />
-          </IconButton>
-        }
-      /> */}
-    </GridList>
+    <div className="col-3">
+      <div class="card text-white mt-3 mb-4">
+        <img class="card-img-top img-fluid image" src={item.pictures[0]} alt="" />
+        <div class="card-body d-flex justify-content-between align-items-start">
+          <div className="d-flex flex-column justify-content-end align-items-end">
+            <h4 class="lead text-dark name">{item.name}</h4>
+          </div>
+          <div className="d-flex flex-column justify-content-end align-items-end">
+            <p className="price text-dark ml-3"> ${item.price}</p>
+            <div>
+              <ShoppingCartIcon
+                style={{ color: green[500], fontSize: "40px" }}
+              ></ShoppingCartIcon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -4,3 +4,15 @@
   max-height: 300px;
   height: 300px;
 }
+
+body {
+  background: white;
+}
+
+.price {
+  font-size: 30px;
+}
+
+.name {
+  font-size: 1rem;
+}

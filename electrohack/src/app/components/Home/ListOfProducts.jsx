@@ -6,10 +6,6 @@ import GridList from "@material-ui/core/GridList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {},
@@ -31,14 +27,10 @@ const ListOfProducts = () => {
   // useDispatch(actionListProducts(products));
 
   return (
-    <div className="container-fluid">
-      <div className="row d-flex">
-        <div className={classes.root}>
-          <GridList cellHeight={160} className={classes.gridList} cols={3}>
-            {products &&
-              products.map((item) => <Product item={item} key={item._id}></Product>)}
-          </GridList>
-        </div>
+    <div className="container-fluid ">
+      <div className="row mt-5">
+        {products &&
+          products.map((item) => <Product item={item} key={item._id}></Product>)}
       </div>
     </div>
   );
