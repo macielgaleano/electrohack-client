@@ -1,5 +1,6 @@
 import React from "react";
 import ListOfProducts from "./ListOfProducts";
+import ListOfStading from "./ListOfStading";
 import Nav from "../Nav/Nav";
 import ScrollTop from "../Nav/ScrollTop";
 import Fab from "@material-ui/core/Fab";
@@ -11,6 +12,7 @@ const Home = (props) => {
   return (
     <div>
       <Nav className="mb-4"></Nav>
+      <ListOfStading></ListOfStading>
       <ListOfProducts></ListOfProducts>
       <ScrollTop {...props}>
         <Fab
