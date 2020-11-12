@@ -8,6 +8,7 @@ import Register from "./app/components/Register/Register";
 import Home from "./app/components/Home/Home";
 import Cart from "./app/components/Cart";
 import CategoryPage from "./app/components/CategoryPage";
+import BrandsPage from "./app/components/BrandsPage";
 
 function App() {
   return (
@@ -43,6 +44,12 @@ function App() {
             exact
             path="/"
             component={Home}
+          ></PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/marcas"
+            component={BrandsPage}
           ></PublicRoute>
         </Switch>
       </div>
