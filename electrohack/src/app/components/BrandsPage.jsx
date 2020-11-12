@@ -1,32 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import ListOfProducts from "./Home/ListOfProducts";
-import Product from "./Home/Product";
-import { Link } from "react-router-dom";
+import React from "react";
+import Brands from "./Brands";
 
-//MUESTRA LISTADO DE MARCAS
-
-export default function BrandsPage({}) {
-  const [brand, setBrand] = useState();
-  useEffect(() => {
-    fetch(`https://electrohack-server.vercel.app/productos/${brand}`)
-      .then((data) => data.json())
-      .then((data) => {
-        setBrand(data);
-      });
-  }, []);
+export default function BrandsPage() {
   return (
-    <div>
-      <ul>
-        {brand &&
-          brand.map((item) => {
-            return (
-              <li>
-                <Link>{item.brand}</Link>
-              </li>
-            );
-          })}
-      </ul>
-    </div>
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-2">
+            <Brands />
+          </div>
+          <div className="col-md-10">
+            <img
+              src="https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

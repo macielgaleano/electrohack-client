@@ -8,7 +8,7 @@ import Register from "./app/components/Register/Register";
 import Home from "./app/components/Home/Home";
 import Cart from "./app/components/Cart";
 import CategoryPage from "./app/components/CategoryPage";
-import BrandsPage from "./app/components/BrandsPage";
+import BrandsPage from "./app/components/Brands";
 
 function App() {
   return (
