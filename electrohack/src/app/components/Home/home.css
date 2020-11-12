@@ -5,6 +5,13 @@
   height: 300px;
 }
 
+.image_carrousel {
+  object-fit: cover;
+  max-width: 50%;
+  max-height: 400px;
+  height: 400px;
+}
+
 body {
   background: white;
 }
