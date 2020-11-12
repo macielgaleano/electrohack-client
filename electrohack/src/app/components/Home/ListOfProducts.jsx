@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Product from "./Product";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,24 +15,36 @@ const useStyles = makeStyles((theme) => ({
 const ListOfProducts = () => {
   const classes = useStyles();
   const [products, setProducts] = useState(false);
+
   // let listProducts = useSelector((state) => state);
 
   useEffect(() => {
     fetch("https://electrohack-server.vercel.app/productos")
       .then((data) => data.json())
       .then((data) => {
-        setProducts(data);
+        !products && setProducts(data);
       });
-  }, []);
+  });
+
+  console.log(products);
+  let getData = () => {
+    setProducts([...products, ...products]);
+  };
 
   // useDispatch(actionListProducts(products));
-
   return (
-    <div className="container-fluid ">
-      <div className="row mt-5">
-        {products &&
-          products.map((item) => <Product item={item} key={item._id}></Product>)}
-      </div>
+    <div className="container ">
+      <InfiniteScroll
+        dataLength={products}
+        next={getData}
+        hasMore={true}
+        loader={<h4>Loading...</h4>}
+      >
+        <div className="row mt-5">
+          {products &&
+            products.map((item, index) => <Product item={item} key={index}></Product>)}
+        </div>
+      </InfiniteScroll>
     </div>
   );
 };

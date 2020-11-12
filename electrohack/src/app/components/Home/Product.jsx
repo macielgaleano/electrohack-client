@@ -6,12 +6,12 @@ import "./home.css";
 
 export default function Product({ item }) {
   return (
-    <div className="col-3">
-      <div class="card text-white mt-3 mb-4">
-        <img class="card-img-top img-fluid image" src={item.pictures[0]} alt="" />
-        <div class="card-body d-flex justify-content-between align-items-start">
+    <div className="col-sm-6 col-12 col-md-3">
+      <div className="card text-white mt-3 mb-4">
+        <img className="card-img-top img-fluid image" src={item.pictures[0]} alt="" />
+        <div className="card-body d-flex justify-content-between align-items-start">
           <div className="d-flex flex-column justify-content-end align-items-end">
-            <h4 class="lead text-dark name">{item.name}</h4>
+            <h4 className="lead text-dark name">{item.name}</h4>
           </div>
           <div className="d-flex flex-column justify-content-end align-items-end">
             <p className="price text-dark ml-3"> ${item.price}</p>
