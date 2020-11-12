@@ -8,7 +8,6 @@ export let navStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   nav: {
-    marginBottom: "8ch",
     background: "#1D4E89",
   },
   title: {
