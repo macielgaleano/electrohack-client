@@ -6,7 +6,7 @@ import PublicRoute from "./app/components/Routers/PublicRoute";
 import Login from "./app/components/Login/Login";
 import Register from "./app/components/Register/Register";
 import Home from "./app/components/Home/Home";
-import Cart from "./app/components/Cart";
+import CartPage from "./app/components/CartPage";
 import CategoryPage from "./app/components/CategoryPage";
 import BrandsPage from "./app/components/Brands";
 
@@ -25,7 +25,7 @@ function App() {
             restricted={false}
             exact
             path="/cart"
-            component={Cart}
+            component={CartPage}
           ></PublicRoute>
           <PublicRoute
             restricted={false}
@@ -36,7 +36,7 @@ function App() {
           <PublicRoute
             restricted={false}
             exact
-            path="/categorias"
+            path="/productos/categorias"
             component={CategoryPage}
           ></PublicRoute>
           <PublicRoute

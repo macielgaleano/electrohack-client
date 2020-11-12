@@ -21,7 +21,7 @@ export default function Categories() {
         categories.map((category) => {
           return (
             <p>
-              <Link to={`/productos/categoria/${category.name}`}>
+              <Link to={`/productos/categorias/${category.name}`}>
                 {category.name}
               </Link>
             </p>
