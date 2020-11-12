@@ -1,11 +1,12 @@
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Zoom from "@material-ui/core/Zoom";
-import PropTypes from "prop-types";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "fixed",
+    color: "#1D4E89",
     bottom: theme.spacing(2),
     right: theme.spacing(2),
     zIndex: "10000",
@@ -37,7 +38,3 @@ export default function ScrollTop(props) {
     </Zoom>
   );
 }
-ScrollTop.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func,
-};
