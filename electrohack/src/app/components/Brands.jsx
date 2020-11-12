@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
+import Nav from "./Nav/Nav";
 
 //MUESTRA LISTADO DE MARCAS
 
@@ -18,6 +19,7 @@ export default function Brands() {
 
   return (
     <>
+      <Nav />
       {brand &&
         brand.map((item) => {
           return (
