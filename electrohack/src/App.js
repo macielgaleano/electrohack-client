@@ -8,7 +8,8 @@ import Register from "./app/components/Register/Register";
 import Home from "./app/components/Home/Home";
 import CartPage from "./app/components/CartPage";
 import CategoryPage from "./app/components/CategoryPage";
-import BrandsPage from "./app/components/Brands";
+import BrandsPage from "./app/components/BrandsPage";
+import OneBrand from "./app/components/OneBrand";
 
 function App() {
   return (
@@ -48,8 +49,14 @@ function App() {
           <PublicRoute
             restricted={false}
             exact
-            path="/marcas"
+            path="/productos/marcas"
             component={BrandsPage}
+          ></PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/productos/marcas/:brand"
+            component={OneBrand}
           ></PublicRoute>
         </Switch>
       </div>

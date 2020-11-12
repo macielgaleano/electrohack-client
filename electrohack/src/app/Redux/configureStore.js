@@ -5,10 +5,12 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import user from "./reducers/userReducer";
 import product from "./reducers/productReducer";
+import cart from "./reducers/cartReducer";
 
 const rootReducer = combineReducers({
   user,
   product,
+  cart,
 });
 
 const persistConfig = {

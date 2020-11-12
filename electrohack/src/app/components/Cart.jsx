@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CartItem from "./CartItem";
-import axios from "axios";
+
 import "./CartPage.css";
+import { useSelector } from "react-redux";
 
 export default function Cart() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://electrohack-server.vercel.app/productos").then((res) => {
-      setItems(res.data);
-    });
-  }, []);
+  const cart = useSelector((state) => state.cart);
 
   return (
-    <div className="container">
+    <div className="container mt-5 pt-5">
       <div className="row">
         <div className="col-lg-8 d-flex justify-content-center align-items-center">
           Producto
@@ -28,9 +23,9 @@ export default function Cart() {
           Precio total
         </div>
       </div>
-      {items &&
-        items.map((item) => {
-          return <CartItem item={item} />;
+      {cart &&
+        cart.map((item) => {
+          return <CartItem key={item.name} item={item} />;
         })}
     </div>
   );
