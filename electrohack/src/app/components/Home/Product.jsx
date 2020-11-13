@@ -5,16 +5,25 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "./home.css";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../Redux/actions/actionsCart";
+import { Link } from "react-router-dom";
 
 export default function Product({ item }) {
   const dispatch = useDispatch();
   return (
     <div className="col-sm-6 col-12 col-md-3">
       <div className="card text-white mt-3 mb-4">
-        <img className="card-img-top img-fluid image" src={item.pictures[0]} alt="" />
+        <Link to={`/productos/${item.slug}`}>
+          <img
+            className="card-img-top img-fluid image"
+            src={item.pictures[0]}
+            alt=""
+          />
+        </Link>
         <div className="card-body d-flex justify-content-between align-items-start">
           <div className="d-flex flex-column justify-content-end align-items-end">
-            <h4 className="lead text-dark name">{item.name}</h4>
+            <Link to={`/productos/${item.slug}`}>
+              <h4 className="lead text-dark name">{item.name}</h4>
+            </Link>
           </div>
           <div
             className="d-flex flex-column justify-content-start align-items-end"

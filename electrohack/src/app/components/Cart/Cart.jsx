@@ -51,9 +51,7 @@ export default function Cart() {
           </div>
           {cart &&
             cart.map((item) => {
-              return (
-                <CartItem setTotal={setTotal} key={item.name} item={item} />
-              );
+              return <CartItem key={item.name} item={item} />;
             })}
         </div>
       </>

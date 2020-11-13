@@ -12,6 +12,7 @@ import BrandsPage from "./app/components/BrandsPage";
 import OneBrandPage from "./app/components/OneBrandPage";
 import OneCategoryPage from "./app/components/OneCategoryPage";
 import EditPage from "./app/components/Edit/EditPage";
+import OneProductPage from "./app/components/OneProductPage";
 
 function App() {
   return (
@@ -72,6 +73,12 @@ function App() {
             exact
             path="/productos/categorias/:category"
             component={OneCategoryPage}
+          ></PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/productos/:slug"
+            component={OneProductPage}
           ></PublicRoute>
         </Switch>
       </div>

@@ -5,7 +5,7 @@ import "./CartPage.css";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../../Redux/actions/actionsCart";
 
-export default function CartItem({ item, setTotal }) {
+export default function CartItem({ item }) {
   const dispatch = useDispatch();
 
   if (item.cuantity < 1) {

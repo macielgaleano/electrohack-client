@@ -102,7 +102,7 @@ export default function Nav(props) {
         )}
       </MenuItem>
       <MenuItem>
-        <Link to="/cart" className="text-dark">
+        <Link to="/carrito" className="text-dark">
           {" "}
           <ShoppingCartIcon className="mr-2" />
           Carro de compra
@@ -141,7 +141,7 @@ export default function Nav(props) {
       <MenuItem>
         <p>
           {" "}
-          <Link to="/cart" className="text-dark">
+          <Link to="/carrito" className="text-dark">
             Carrito de compras
           </Link>
         </p>
@@ -210,7 +210,7 @@ export default function Nav(props) {
                   color="secondary"
                 >
                   <Link
-                    to="/cart"
+                    to="/carrito"
                     className="text-white"
                     style={{ textDecoration: "none" }}
                   >
