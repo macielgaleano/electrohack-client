@@ -58,24 +58,36 @@ export default function Nav(props) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <h5 className="text-center mb-3">
+      <h5 className="text-center pt-2 mb-3">
         {useSelector(
           (state) => state.user.user.firstname + " " + state.user.user.lastname
         )}
       </h5>
-
       <MenuItem>
-        <Link to="/configuracion" className="text-dark">
-          {" "}
-          <SettingsIcon className="mr-2" />
-          Configuracion
-        </Link>
+        {!useSelector((state) => state.user.token) && (
+          <Link to="/login" className="text-dark">
+            {" "}
+            <ExitToAppIcon className="mr-2" />
+            Iniciar sesion
+          </Link>
+        )}
       </MenuItem>
       <MenuItem>
-        <Link to="/ordenes" className="text-dark">
-          <AccountBalanceWalletIcon className="mr-2" />
-          Ordenes
-        </Link>
+        {useSelector((state) => state.user.token) && (
+          <Link to="/configuracion" className="text-dark">
+            {" "}
+            <SettingsIcon className="mr-2" />
+            Configuracion
+          </Link>
+        )}
+      </MenuItem>
+      <MenuItem>
+        {useSelector((state) => state.user.token) && (
+          <Link to="/ordenes" className="text-dark">
+            <AccountBalanceWalletIcon className="mr-2" />
+            Ordenes
+          </Link>
+        )}
       </MenuItem>
       <MenuItem>
         <Link to="/cart" className="text-dark">
@@ -85,11 +97,13 @@ export default function Nav(props) {
         </Link>
       </MenuItem>
       <MenuItem>
-        <Link to="/cart" className="text-dark">
-          {" "}
-          <ExitToAppIcon className="mr-2" />
-          Cerrar sesion
-        </Link>
+        {useSelector((state) => state.user.token) && (
+          <Link to="/cart" className="text-dark">
+            {" "}
+            <ExitToAppIcon className="mr-2" />
+            Cerrar sesion
+          </Link>
+        )}
       </MenuItem>
     </Menu>
   );
@@ -105,18 +119,28 @@ export default function Nav(props) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem className="d-flex align-items-center justify-contentent-center">
-        <p>Ordenes</p>
-      </MenuItem>
+      {!useSelector((state) => state.user.token) && (
+        <MenuItem>
+          <p>Iniciar sesion</p>
+        </MenuItem>
+      )}
       <MenuItem>
         <p>Carrito de compras</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <p className="">Profile</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <p className="">Cerrar sesion</p>
-      </MenuItem>
+      {useSelector((state) => state.user.token) && (
+        <>
+          <MenuItem className="d-flex align-items-center justify-contentent-center">
+            <p>Ordenes</p>
+          </MenuItem>
+
+          <MenuItem onClick={handleProfileMenuOpen}>
+            <p className="">Profile</p>
+          </MenuItem>
+          <MenuItem onClick={handleProfileMenuOpen}>
+            <p className="">Cerrar sesion</p>
+          </MenuItem>
+        </>
+      )}
     </Menu>
   );
 
