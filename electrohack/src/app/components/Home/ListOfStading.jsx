@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
+import "./home.css";
 
 const ListOfStading = () => {
   const [products, setProducts] = useState(false);
@@ -23,15 +24,15 @@ const ListOfStading = () => {
             {products &&
               products.map((item, index) => {
                 return (
-                  <Carousel.Item interval={2000}>
+                  <Carousel.Item interval={3000} key={index}>
                     <img
                       className="d-block w-100 image_carrousel img-fluid "
                       src={item.pictures[0]}
                       alt="First slide"
                     />
-                    <Carousel.Caption>
-                      <h3 className=" bg-dark">{item.name}</h3>
-                      <p className=" bg-dark">{item.description}</p>
+                    <Carousel.Caption key={index}>
+                      <h3 className="carrousel-text">{item.name}</h3>
+                      <p className="carrousel-text">{item.description}</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 );
@@ -43,15 +44,15 @@ const ListOfStading = () => {
             {products &&
               products.map((item, index) => {
                 return (
-                  <Carousel.Item interval={2000}>
+                  <Carousel.Item interval={2000} key={index}>
                     <img
                       className="d-block w-100 image_carrousel img-fluid "
                       src={item.pictures[0]}
                       alt="First slide"
                     />
-                    <Carousel.Caption>
-                      <h3 className=" bg-dark">{item.name}</h3>
-                      <p className=" bg-dark">{item.description}</p>
+                    <Carousel.Caption key={index}>
+                      <h3 className="carrousel-text">{item.name}</h3>
+                      <p className="carrousel-text">{item.description}</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 );
