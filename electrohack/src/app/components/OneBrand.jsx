@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { green } from "@material-ui/core/colors";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { useParams } from "react-router-dom";
-import Nav from "./Nav/Nav";
 
 export default function OneBrand({ brand }) {
   return (

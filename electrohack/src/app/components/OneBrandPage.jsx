@@ -8,7 +8,6 @@ import OneBrand from "./OneBrand";
 
 export default function OneBrandPage() {
   const { brand } = useParams();
-  console.log("brand", brand);
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch(`https://electrohack-server.vercel.app/productos/${products}`)
@@ -19,7 +18,6 @@ export default function OneBrandPage() {
   }, []);
 
   const brandProducts = products.filter((product) => product.brand === brand);
-  console.log("brandProducts", brandProducts);
   return (
     <>
       <Nav />

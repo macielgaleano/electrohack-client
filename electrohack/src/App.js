@@ -10,6 +10,7 @@ import CartPage from "./app/components/CartPage";
 import CategoryPage from "./app/components/CategoryPage";
 import BrandsPage from "./app/components/BrandsPage";
 import OneBrandPage from "./app/components/OneBrandPage";
+import OneCategoryPage from "./app/components/OneCategoryPage";
 
 function App() {
   return (
@@ -57,6 +58,12 @@ function App() {
             exact
             path="/productos/marcas/:brand"
             component={OneBrandPage}
+          ></PublicRoute>
+          <PublicRoute
+            restricted={false}
+            exact
+            path="/productos/categorias/:category"
+            component={OneCategoryPage}
           ></PublicRoute>
         </Switch>
       </div>
