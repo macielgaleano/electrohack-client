@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 import "./CartPage.css";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../Redux/actions/actionsCart";
+import { addProduct, removeProduct } from "../../Redux/actions/actionsCart";
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export default function CartItem({ item }) {
     return <></>;
   } else {
     return (
-      <div className="box-item">
+      <div className="box-item mt-4">
         <div className="row">
           <div className="col-lg-2">
             <div className="box-image m-3">
@@ -24,7 +24,7 @@ export default function CartItem({ item }) {
             <p>{item.description}</p>
           </div>
           <div className="col-lg-2 d-flex justify-content-center align-items-center">
-            <RemoveCircleIcon />
+            <RemoveCircleIcon onClick={() => dispatch(removeProduct(item))} />
             <span className="m-2">{item.cuantity}</span>
             <AddCircleIcon onClick={() => dispatch(addProduct(item))} />
           </div>

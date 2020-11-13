@@ -7,11 +7,13 @@ import Fab from "@material-ui/core/Fab";
 import PropTypes from "prop-types";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FixedCart from "./FixedCart";
 
 const Home = (props) => {
   return (
     <div>
       <Nav className="mb-4"></Nav>
+      <FixedCart></FixedCart>
       <ListOfStading></ListOfStading>
       <ListOfProducts></ListOfProducts>
       <ScrollTop {...props}>

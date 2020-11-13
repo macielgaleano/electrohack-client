@@ -4,6 +4,7 @@ import Product from "./Product";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Loading from "../Loading/Loading";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,13 +38,11 @@ const ListOfProducts = () => {
         dataLength={products}
         next={getData}
         hasMore={true}
-        loader={<h4>Loading...</h4>}
+        loader={<Loading></Loading>}
       >
         <div className="row mt-5">
           {products &&
-            products.map((item, index) => (
-              <Product item={item} key={index}></Product>
-            ))}
+            products.map((item, index) => <Product item={item} key={index}></Product>)}
         </div>
       </InfiniteScroll>
     </div>
