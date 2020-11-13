@@ -7,7 +7,9 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../Redux/actions/actionsCart";
 import "./OneProduct.css";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Link } from "react-router-dom";
+import FixedCart from "../components/Home/FixedCart";
 import { increment } from "../Redux/actions/actionsSales";
 
 const OneProduct = () => {
@@ -21,30 +23,35 @@ const OneProduct = () => {
         setProducts(data);
       });
   }, []);
-  console.log("slug", slug);
-  console.log("productos", products);
 
   const productSlug = products.filter((product) => product.slug === slug);
-  console.log("productSlug", productSlug);
 
   return (
     <>
       <Nav />
-      <div className="container mt-5 pt-5">
+      <FixedCart></FixedCart>
+
+      <div
+        className="container mt-5 pt-5"
+        style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: "400px" }}
+      >
         <div>
+          <Link to="/" name="" id="" className="btn btn-info mb-3">
+            <ArrowBackIcon></ArrowBackIcon>Volver al inicio
+          </Link>
           <div className="box-product">
             {productSlug &&
-              productSlug.map((product) => {
+              productSlug.map((product, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <h1>{product.name}</h1>
                     <div className="row">
-                      <div className="col-md-8">
+                      <div className="col-md-8 " key={index}>
                         <p className="mt-2 pt-2">
                           <strong>Descripción:</strong> {product.description}
                         </p>
 
-                        <p>
+                        <p key={index}>
                           <strong>Marca: </strong>
                           <Link to={`/productos/marcas/${product.brand}`}>
                             {product.brand}
@@ -56,6 +63,7 @@ const OneProduct = () => {
                         </p>
                         <div>
                           <ShoppingCartIcon
+                            key={index}
                             style={{ color: green[500], fontSize: "40px" }}
                             onClick={() => {
                               dispatch(addProduct(product));

@@ -17,12 +17,10 @@ const ListOfStading = () => {
       });
   });
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 mb-5">
       <div className="row mt-5">
-        <h3 className="mt-5 col-12 text-center mb-3">
-          Nuestros productos destacados
-        </h3>
-        <div className="col-6 mt-5">
+        <h3 className="mt-5 col-12 text-center mb-3">Nuestros productos destacados</h3>
+        <div className="col-md-6 col-sm-12 col-12 mt-5">
           <Carousel>
             {products &&
               products.map((item, index) => {

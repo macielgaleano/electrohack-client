@@ -19,9 +19,12 @@ export default function OneBrandPage() {
   return (
     <>
       <Nav />
+
       <div className="container mt-5 pt-5">
+        <h1 className="text-center">{brand}</h1>
         <div className="row mt-5">
-          {brandProducts && brandProducts.map((brand) => <OneBrand brand={brand} />)}
+          {brandProducts &&
+            brandProducts.map((brand) => <OneBrand brand={brand} />)}
         </div>
       </div>
     </>
