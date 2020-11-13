@@ -6,7 +6,7 @@ import PublicRoute from "./app/components/Routers/PublicRoute";
 import Login from "./app/components/Login/Login";
 import Register from "./app/components/Register/Register";
 import Home from "./app/components/Home/Home";
-import CartPage from "./app/components/CartPage";
+import CartPage from "./app/components/Cart/CartPage";
 import CategoryPage from "./app/components/CategoryPage";
 import BrandsPage from "./app/components/BrandsPage";
 import OneBrandPage from "./app/components/OneBrandPage";

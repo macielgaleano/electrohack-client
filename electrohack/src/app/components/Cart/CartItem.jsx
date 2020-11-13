@@ -3,7 +3,7 @@ import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 import "./CartPage.css";
 import { useDispatch } from "react-redux";
-import { addProduct, removeProduct } from "../Redux/actions/actionsCart";
+import { addProduct, removeProduct } from "../../Redux/actions/actionsCart";
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
