@@ -11,7 +11,7 @@ export default function CartItem({ item }) {
     return <></>;
   } else {
     return (
-      <div className="box-item">
+      <div className="box-item mt-4">
         <div className="row">
           <div className="col-lg-2">
             <div className="box-image m-3">
