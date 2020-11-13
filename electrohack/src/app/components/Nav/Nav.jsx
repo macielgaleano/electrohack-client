@@ -48,8 +48,12 @@ export default function Nav(props) {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  let user = useSelector((state) => state.user);
+
   const loggout = () => {
-    axios;
+    axios.patch("https://electrohack-server.vercel.app/logout", {
+      email: user.user.email,
+    });
   };
 
   const menuId = "primary-search-account-menu";
@@ -64,9 +68,8 @@ export default function Nav(props) {
       onClose={handleMenuClose}
     >
       <h5 className="text-center pt-2 mb-3">
-        {useSelector(
-          (state) => state.user.user.firstname + " " + state.user.user.lastname
-        )}
+        {useSelector((state) => state.user.token) &&
+          user.user.firstname + " " + user.user.lastname}
       </h5>
       <MenuItem>
         {!useSelector((state) => state.user.token) && (
@@ -95,7 +98,7 @@ export default function Nav(props) {
         )}
       </MenuItem>
       <MenuItem>
-        <Link to="/cart" className="text-dark">
+        <Link to="/carrito" className="text-dark">
           {" "}
           <ShoppingCartIcon className="mr-2" />
           Carro de compra
@@ -103,7 +106,7 @@ export default function Nav(props) {
       </MenuItem>
       <MenuItem>
         {useSelector((state) => state.user.token) && (
-          <Link to="/cart" onClick={loggout} className="text-dark">
+          <Link to="/carrito" onClick={loggout} className="text-dark">
             {" "}
             <ExitToAppIcon className="mr-2" />
             Cerrar sesion
@@ -134,7 +137,7 @@ export default function Nav(props) {
       <MenuItem>
         <p>
           {" "}
-          <Link to="/cart" className="text-dark">
+          <Link to="/carrito" className="text-dark">
             Carrito de compras
           </Link>
         </p>
@@ -207,7 +210,7 @@ export default function Nav(props) {
                   color="secondary"
                 >
                   <Link
-                    to="/cart"
+                    to="/carrito"
                     className="text-white"
                     style={{ textDecoration: "none" }}
                   >
