@@ -10,11 +10,8 @@ import CartPage from "./app/components/Cart/CartPage";
 import CategoryPage from "./app/components/CategoryPage";
 import BrandsPage from "./app/components/BrandsPage";
 import OneBrandPage from "./app/components/OneBrandPage";
-<<<<<<< Updated upstream
 import OneCategoryPage from "./app/components/OneCategoryPage";
-=======
 import EditPage from "./app/components/EditPage";
->>>>>>> Stashed changes
 
 function App() {
   return (
