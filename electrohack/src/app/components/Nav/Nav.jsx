@@ -3,6 +3,7 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
+import { useSelector } from "react-redux";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
@@ -17,6 +18,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { navStyles } from "./navStyles";
+import { Link } from "react-router-dom";
 
 const useStyles = navStyles;
 
@@ -107,9 +109,11 @@ export default function Nav(props) {
       <div className={classes.nav}>
         <AppBar position="fixed" className={classes.nav} id="back-to-top-anchor">
           <Toolbar>
-            <Typography className={classes.title} variant="h6" noWrap>
-              ELECTROHACK
-            </Typography>
+            <Link to="/" className="text-white">
+              <Typography className={classes.title} variant="h6" noWrap>
+                ELECTROHACK
+              </Typography>
+            </Link>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -127,8 +131,17 @@ export default function Nav(props) {
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               <IconButton aria-label="show 4 new mails" color="inherit">
-                <Badge badgeContent={200} color="secondary">
-                  <ShoppingCartIcon />
+                <Badge
+                  badgeContent={useSelector((state) => state.cart.length)}
+                  color="secondary"
+                >
+                  <Link
+                    to="/cart"
+                    className="text-white"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <ShoppingCartIcon />
+                  </Link>
                 </Badge>
               </IconButton>
               <IconButton
@@ -136,7 +149,7 @@ export default function Nav(props) {
                 spacing={3}
                 color="inherit"
               >
-                <Badge badgeContent={17} color="secondary">
+                <Badge color="secondary">
                   <ListIcon />
                 </Badge>
               </IconButton>
