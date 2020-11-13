@@ -1,6 +1,5 @@
 import React from "react";
 import CartItem from "./CartItem";
-
 import "./CartPage.css";
 import { useSelector } from "react-redux";
 

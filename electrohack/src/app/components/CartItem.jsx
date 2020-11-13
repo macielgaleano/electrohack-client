@@ -3,8 +3,10 @@ import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 import "./CartPage.css";
 import { useDispatch } from "react-redux";
+import { addProduct } from "../Redux/actions/actionsCart";
 
 export default function CartItem({ item }) {
+  const dispatch = useDispatch();
   if (item.cuantity < 1) {
     return <></>;
   } else {
@@ -24,7 +26,7 @@ export default function CartItem({ item }) {
           <div className="col-lg-2 d-flex justify-content-center align-items-center">
             <RemoveCircleIcon />
             <span className="m-2">{item.cuantity}</span>
-            <AddCircleIcon />
+            <AddCircleIcon onClick={() => dispatch(addProduct(item))} />
           </div>
           <div className="col-lg-1 d-flex justify-content-center align-items-center">
             $ {Math.round(item.price)}
