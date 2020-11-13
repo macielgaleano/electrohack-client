@@ -4,3 +4,5 @@ function addProduct(product) {
     payload: product,
   };
 }
+
+export { addProduct };

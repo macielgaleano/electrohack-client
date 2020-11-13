@@ -1,9 +1,12 @@
 function cartReducer(state = [], action) {
   switch (action.type) {
     case "ADD_PRODUCT":
+      console.log(action.payload);
       const cartProduct = state.find(
-        (product) => product.name === action.paylod.name
+        (product) => product.name === action.payload.name
       );
+
+      console.log(cartProduct);
 
       if (!cartProduct) {
         action.payload.cuantity = 1;

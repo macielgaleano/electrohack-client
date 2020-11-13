@@ -26,7 +26,6 @@ const ListOfProducts = () => {
       });
   });
 
-  console.log(products);
   let getData = () => {
     setProducts([...products, ...products]);
   };
@@ -42,7 +41,9 @@ const ListOfProducts = () => {
       >
         <div className="row mt-5">
           {products &&
-            products.map((item, index) => <Product item={item} key={index}></Product>)}
+            products.map((item, index) => (
+              <Product item={item} key={index}></Product>
+            ))}
         </div>
       </InfiniteScroll>
     </div>
