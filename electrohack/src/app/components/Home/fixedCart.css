@@ -1,6 +1,6 @@
 .cart {
   position: fixed;
-  top: 77%;
+  top: 70%;
   z-index: 100000;
   margin: 0;
   width: 100%;
@@ -9,4 +9,13 @@
   border-radius: 10px;
   border: 1px solid black;
   padding: 10px 15px;
+}
+
+@media (max-width: 990px) {
+  .cart {
+    display: none;
+  }
+  .card-body {
+    height: 200px;
+  }
 }

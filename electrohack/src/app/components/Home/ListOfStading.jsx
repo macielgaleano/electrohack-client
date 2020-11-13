@@ -36,15 +36,18 @@ const ListOfStading = () => {
                       />
                     </Link>
                     <Carousel.Caption key={index}>
-                      <h3 className="carrousel-text">{item.name}</h3>
-                      <p className="carrousel-text">{item.description}</p>
+                      <h3 className="carrousel-text p2">{item.name}</h3>
+                      <p className="carrousel-text price text-white ">
+                        {" "}
+                        ${Math.round(item.price)}
+                      </p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 );
               })}
           </Carousel>
         </div>
-        <div className="col-6 mt-5">
+        <div className="col-md-6 col-sm-12 col-12 mt-5">
           <Carousel>
             {products &&
               products.map((item, index) => {
@@ -58,8 +61,11 @@ const ListOfStading = () => {
                       />
                     </Link>
                     <Carousel.Caption key={index}>
-                      <h3 className="carrousel-text">{item.name}</h3>
-                      <p className="carrousel-text">{item.description}</p>
+                      <h3 className="carrousel-text p2">{item.name}</h3>
+                      <p className="carrousel-text price text-white">
+                        {" "}
+                        ${Math.round(item.price)}
+                      </p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 );

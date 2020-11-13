@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
+import { useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useHistory } from "react-router-dom";
+import { actionRegister } from "../../Redux/actions/actionRegister";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -30,8 +34,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function Register() {
   const classes = useStyles();
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const [firstName, setName] = React.useState("");
+  const [lastname, setLastname] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  let submitsignup = async (e) => {
+    e.preventDefault();
+    let userData = await axios
+      .post("https://electrohack-server.vercel.app/token/registro", {
+        firstname: firstName,
+        lastname: lastname,
+        email: email,
+        password: password,
+        address: address,
+        phone: phone,
+      })
+      .then((user) => {
+        dispatch(actionRegister(user.data));
+        history.push("/");
+      });
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -53,6 +83,7 @@ export default function SignUp() {
                 fullWidth
                 label="Nombre"
                 autoFocus
+                onChange={(e) => setName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -62,6 +93,7 @@ export default function SignUp() {
                 fullWidth
                 label="Apellido"
                 autoComplete="lname"
+                onChange={(e) => setLastname(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -71,6 +103,7 @@ export default function SignUp() {
                 fullWidth
                 label="Correo electronico"
                 autoComplete="email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -81,6 +114,7 @@ export default function SignUp() {
                 label="Contraseña"
                 type="password"
                 autoComplete="current-password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -90,6 +124,7 @@ export default function SignUp() {
                 fullWidth
                 label="Direccion"
                 autoComplete="current-password"
+                onChange={(e) => setAddress(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -99,6 +134,7 @@ export default function SignUp() {
                 fullWidth
                 label="Numero de telefono"
                 autoComplete="current-password"
+                onChange={(e) => setPhone(e.target.value)}
               />
             </Grid>
           </Grid>
@@ -108,6 +144,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={submitsignup}
           >
             Registrate
           </Button>

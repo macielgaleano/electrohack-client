@@ -26,4 +26,12 @@ body {
 
 .carrousel-text {
   background-color: #1d4e89c4;
+  border-radius: 10px;
+}
+
+.p2 {
+  font-size: 1.6rem;
+}
+.p1 {
+  font-size: 0.8rem;
 }

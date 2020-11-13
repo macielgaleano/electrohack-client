@@ -1,13 +1,9 @@
 function userReducer(state = {}, action) {
   switch (action.type) {
-    case "LOGGED":
-      return {
-        ...state,
-        token: action.payload.token,
-        user: action.payload.user,
-      };
+    case "REGISTER":
+      return { ...action.payload.data };
     case "LOGOUT":
-      return [];
+      return {};
 
     default:
       return state;

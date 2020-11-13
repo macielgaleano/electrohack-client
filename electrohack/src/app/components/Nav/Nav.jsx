@@ -11,12 +11,13 @@ import Menu from "@material-ui/core/Menu";
 import ListIcon from "@material-ui/icons/List";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import SettingsIcon from "@material-ui/icons/Settings";
+import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { navStyles } from "./navStyles";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Link } from "react-router-dom";
 
 const useStyles = navStyles;
@@ -57,8 +58,53 @@ export default function Nav(props) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <h5 className="text-center pt-2 mb-3">
+        {useSelector(
+          (state) => state.user.user.firstname + " " + state.user.user.lastname
+        )}
+      </h5>
+      <MenuItem>
+        {!useSelector((state) => state.user.token) && (
+          <Link to="/login" className="text-dark">
+            {" "}
+            <ExitToAppIcon className="mr-2" />
+            Iniciar sesion
+          </Link>
+        )}
+      </MenuItem>
+      <MenuItem>
+        {useSelector((state) => state.user.token) && (
+          <Link to="/configuracion" className="text-dark">
+            {" "}
+            <SettingsIcon className="mr-2" />
+            Configuracion
+          </Link>
+        )}
+      </MenuItem>
+      <MenuItem>
+        {useSelector((state) => state.user.token) && (
+          <Link to="/ordenes" className="text-dark">
+            <AccountBalanceWalletIcon className="mr-2" />
+            Ordenes
+          </Link>
+        )}
+      </MenuItem>
+      <MenuItem>
+        <Link to="/cart" className="text-dark">
+          {" "}
+          <ShoppingCartIcon className="mr-2" />
+          Carro de compra
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        {useSelector((state) => state.user.token) && (
+          <Link to="/cart" className="text-dark">
+            {" "}
+            <ExitToAppIcon className="mr-2" />
+            Cerrar sesion
+          </Link>
+        )}
+      </MenuItem>
     </Menu>
   );
 
@@ -73,33 +119,28 @@ export default function Nav(props) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {!useSelector((state) => state.user.token) && (
+        <MenuItem>
+          <p>Iniciar sesion</p>
+        </MenuItem>
+      )}
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <p>Carrito de compras</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
+      {useSelector((state) => state.user.token) && (
+        <>
+          <MenuItem className="d-flex align-items-center justify-contentent-center">
+            <p>Ordenes</p>
+          </MenuItem>
+
+          <MenuItem onClick={handleProfileMenuOpen}>
+            <p className="">Profile</p>
+          </MenuItem>
+          <MenuItem onClick={handleProfileMenuOpen}>
+            <p className="">Cerrar sesion</p>
+          </MenuItem>
+        </>
+      )}
     </Menu>
   );
 

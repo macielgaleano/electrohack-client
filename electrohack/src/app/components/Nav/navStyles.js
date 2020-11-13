@@ -24,7 +24,7 @@ export let navStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(6),
-    marginLeft: 200,
+    marginLeft: 10,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
