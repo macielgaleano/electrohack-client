@@ -19,6 +19,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { navStyles } from "./navStyles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const useStyles = navStyles;
 
@@ -45,6 +46,10 @@ export default function Nav(props) {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const loggout = () => {
+    axios;
   };
 
   const menuId = "primary-search-account-menu";
@@ -98,7 +103,7 @@ export default function Nav(props) {
       </MenuItem>
       <MenuItem>
         {useSelector((state) => state.user.token) && (
-          <Link to="/cart" className="text-dark">
+          <Link to="/cart" onClick={loggout} className="text-dark">
             {" "}
             <ExitToAppIcon className="mr-2" />
             Cerrar sesion
@@ -121,23 +126,45 @@ export default function Nav(props) {
     >
       {!useSelector((state) => state.user.token) && (
         <MenuItem>
-          <p>Iniciar sesion</p>
+          <p>
+            <Link to="/login">Iniciar sesion</Link>
+          </p>
         </MenuItem>
       )}
       <MenuItem>
-        <p>Carrito de compras</p>
+        <p>
+          {" "}
+          <Link to="/cart" className="text-dark">
+            Carrito de compras
+          </Link>
+        </p>
       </MenuItem>
       {useSelector((state) => state.user.token) && (
         <>
           <MenuItem className="d-flex align-items-center justify-contentent-center">
-            <p>Ordenes</p>
+            <p>
+              {" "}
+              <Link className="text-dark" to="/ordenes">
+                Ordenes
+              </Link>
+            </p>
           </MenuItem>
 
           <MenuItem onClick={handleProfileMenuOpen}>
-            <p className="">Profile</p>
+            <p>
+              {" "}
+              <Link className="text-dark" to="/ordenes">
+                Configuration
+              </Link>
+            </p>
           </MenuItem>
           <MenuItem onClick={handleProfileMenuOpen}>
-            <p className="">Cerrar sesion</p>
+            <p>
+              {" "}
+              <Link className="text-dark" onClick={loggout} to="/">
+                Cerrar sesion
+              </Link>
+            </p>
           </MenuItem>
         </>
       )}
@@ -147,7 +174,11 @@ export default function Nav(props) {
   return (
     <div>
       <div className={classes.nav}>
-        <AppBar position="fixed" className={classes.nav} id="back-to-top-anchor">
+        <AppBar
+          position="fixed"
+          className={classes.nav}
+          id="back-to-top-anchor"
+        >
           <Toolbar>
             <Link to="/" className="text-white">
               <Typography className={classes.title} variant="h6" noWrap>
