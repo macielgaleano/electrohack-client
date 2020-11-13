@@ -9,7 +9,7 @@ import Home from "./app/components/Home/Home";
 import CartPage from "./app/components/CartPage";
 import CategoryPage from "./app/components/CategoryPage";
 import BrandsPage from "./app/components/BrandsPage";
-import OneBrand from "./app/components/OneBrand";
+import OneBrandPage from "./app/components/OneBrandPage";
 
 function App() {
   return (
@@ -56,7 +56,7 @@ function App() {
             restricted={false}
             exact
             path="/productos/marcas/:brand"
-            component={OneBrand}
+            component={OneBrandPage}
           ></PublicRoute>
         </Switch>
       </div>
