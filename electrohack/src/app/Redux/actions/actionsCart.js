@@ -5,4 +5,11 @@ function addProduct(product) {
   };
 }
 
-export { addProduct };
+function removeProduct(product) {
+  return {
+    type: "REMOVE_PRODUCT",
+    payload: product,
+  };
+}
+
+export { addProduct, removeProduct };
