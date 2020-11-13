@@ -19,11 +19,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { navStyles } from "./navStyles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { actionLogout } from "../../Redux/actions/actionLoggout";
 import axios from "axios";
 
 const useStyles = navStyles;
 
 export default function Nav(props) {
+  const dispatch = useDispatch();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -54,6 +57,7 @@ export default function Nav(props) {
     axios.patch("https://electrohack-server.vercel.app/logout", {
       email: user.user.email,
     });
+    dispatch(actionLogout());
   };
 
   const menuId = "primary-search-account-menu";
@@ -106,7 +110,7 @@ export default function Nav(props) {
       </MenuItem>
       <MenuItem>
         {useSelector((state) => state.user.token) && (
-          <Link to="/cart" onClick={loggout} className="text-dark">
+          <Link to="/" onClick={loggout} className="text-dark">
             {" "}
             <ExitToAppIcon className="mr-2" />
             Cerrar sesion
