@@ -98,7 +98,7 @@ export default function Nav(props) {
         )}
       </MenuItem>
       <MenuItem>
-        <Link to="/cart" className="text-dark">
+        <Link to="/carrito" className="text-dark">
           {" "}
           <ShoppingCartIcon className="mr-2" />
           Carro de compra
@@ -106,7 +106,7 @@ export default function Nav(props) {
       </MenuItem>
       <MenuItem>
         {useSelector((state) => state.user.token) && (
-          <Link to="/cart" onClick={loggout} className="text-dark">
+          <Link to="/carrito" onClick={loggout} className="text-dark">
             {" "}
             <ExitToAppIcon className="mr-2" />
             Cerrar sesion
@@ -137,7 +137,7 @@ export default function Nav(props) {
       <MenuItem>
         <p>
           {" "}
-          <Link to="/cart" className="text-dark">
+          <Link to="/carrito" className="text-dark">
             Carrito de compras
           </Link>
         </p>
@@ -177,7 +177,11 @@ export default function Nav(props) {
   return (
     <div>
       <div className={classes.nav}>
-        <AppBar position="fixed" className={classes.nav} id="back-to-top-anchor">
+        <AppBar
+          position="fixed"
+          className={classes.nav}
+          id="back-to-top-anchor"
+        >
           <Toolbar>
             <Link to="/" className="text-white">
               <Typography className={classes.title} variant="h6" noWrap>
@@ -206,7 +210,7 @@ export default function Nav(props) {
                   color="secondary"
                 >
                   <Link
-                    to="/cart"
+                    to="/carrito"
                     className="text-white"
                     style={{ textDecoration: "none" }}
                   >

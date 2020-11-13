@@ -35,7 +35,9 @@ const FixedCart = () => {
                               onClick={() => dispatch(removeProduct(item))}
                             />
                             <span className="m-2">{item.cuantity}</span>
-                            <AddCircleIcon onClick={() => dispatch(addProduct(item))} />
+                            <AddCircleIcon
+                              onClick={() => dispatch(addProduct(item))}
+                            />
                           </li>{" "}
                         </ul>
                       </div>
@@ -48,7 +50,10 @@ const FixedCart = () => {
                 className="btn btn-danger active border-rounded mb-2"
                 style={{ width: "100%" }}
               >
-                <Link style={{ textDecoration: "none", color: "white" }} to="/cart">
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  to="/carrito"
+                >
                   Carrito
                 </Link>
               </button>
