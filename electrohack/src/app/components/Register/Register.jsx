@@ -7,8 +7,12 @@ import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
+import { useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useHistory } from "react-router-dom";
+import { actionRegister } from "../../Redux/actions/actionRegister";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,6 +36,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Register() {
   const classes = useStyles();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const [firstName, setName] = React.useState("");
   const [lastname, setLastname] = useState("");
@@ -40,7 +46,22 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let submitsignup = () => {};
+  let submitsignup = async (e) => {
+    e.preventDefault();
+    let userData = await axios
+      .post("https://electrohack-server.vercel.app/token/registro", {
+        firstname: firstName,
+        lastname: lastname,
+        email: email,
+        password: password,
+        address: address,
+        phone: phone,
+      })
+      .then((user) => {
+        dispatch(actionRegister(user.data));
+        history.push("/");
+      });
+  };
 
   return (
     <Container component="main" maxWidth="xs">

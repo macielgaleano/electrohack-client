@@ -9,6 +9,10 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useHistory } from "react-router-dom";
+import { actionRegister } from "../../Redux/actions/actionRegister";
+import axios from "axios";
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -28,18 +32,37 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  input: {
+    marginBottom: "20px",
+  },
+  center: {
+    margin: "auto auto",
+  },
 }));
 
 export default function Login() {
   const classes = useStyles();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  let submitsignup = () => {};
+  let login = async (e) => {
+    e.preventDefault();
+    let userData = await axios
+      .post("https://electrohack-server.vercel.app/token/login", {
+        email: email,
+        password: password,
+      })
+      .then((user) => {
+        dispatch(actionRegister(user.data));
+        history.push("/");
+      });
+  };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container className={classes.center} component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
@@ -49,7 +72,7 @@ export default function Login() {
           Registarse
         </Typography>
         <form className={classes.form} noValidate>
-          <Grid item xs={12}>
+          <Grid item xs={12} className={classes.input}>
             <TextField
               variant="outlined"
               required
@@ -77,7 +100,7 @@ export default function Login() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={submitsignup}
+            onClick={login}
           >
             Registrate
           </Button>
