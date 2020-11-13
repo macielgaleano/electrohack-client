@@ -11,7 +11,7 @@ import CategoryPage from "./app/components/CategoryPage";
 import BrandsPage from "./app/components/BrandsPage";
 import OneBrandPage from "./app/components/OneBrandPage";
 import OneCategoryPage from "./app/components/OneCategoryPage";
-import EditPage from "./app/components/EditPage";
+import EditPage from "./app/components/Edit/EditPage";
 
 function App() {
   return (
@@ -33,9 +33,10 @@ function App() {
           <PublicRoute
             restricted={false}
             exact
-            path="/cart"
+            path="/carrito"
             component={CartPage}
           ></PublicRoute>
+
           <PublicRoute
             restricted={false}
             exact
