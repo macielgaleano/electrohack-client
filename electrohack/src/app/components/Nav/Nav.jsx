@@ -58,6 +58,12 @@ export default function Nav(props) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
+      <h5 className="text-center mb-3">
+        {useSelector(
+          (state) => state.user.user.firstname + " " + state.user.user.lastname
+        )}
+      </h5>
+
       <MenuItem>
         <Link to="/configuracion" className="text-dark">
           {" "}
