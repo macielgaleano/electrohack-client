@@ -23,7 +23,7 @@ const ListOfStading = () => {
             {products &&
               products.map((item, index) => {
                 return (
-                  <Carousel.Item interval={2000}>
+                  <Carousel.Item interval={1000}>
                     <img
                       className="d-block w-100 image_carrousel img-fluid "
                       src={item.pictures[0]}
