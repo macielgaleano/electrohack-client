@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 const ListOfStading = () => {
   const [products, setProducts] = useState(false);
@@ -18,18 +19,22 @@ const ListOfStading = () => {
   return (
     <div className="container mt-5">
       <div className="row mt-5">
-        <h3 className="mt-5 col-12 text-center mb-3">Nuestros productos destacados</h3>
+        <h3 className="mt-5 col-12 text-center mb-3">
+          Nuestros productos destacados
+        </h3>
         <div className="col-6 mt-5">
           <Carousel>
             {products &&
               products.map((item, index) => {
                 return (
                   <Carousel.Item interval={3000} key={index}>
-                    <img
-                      className="d-block w-100 image_carrousel img-fluid "
-                      src={item.pictures[0]}
-                      alt="First slide"
-                    />
+                    <Link to={`/productos/${item.slug}`}>
+                      <img
+                        className="d-block w-100 image_carrousel img-fluid "
+                        src={item.pictures[0]}
+                        alt="First slide"
+                      />
+                    </Link>
                     <Carousel.Caption key={index}>
                       <h3 className="carrousel-text">{item.name}</h3>
                       <p className="carrousel-text">{item.description}</p>
@@ -45,11 +50,13 @@ const ListOfStading = () => {
               products.map((item, index) => {
                 return (
                   <Carousel.Item interval={2000} key={index}>
-                    <img
-                      className="d-block w-100 image_carrousel img-fluid "
-                      src={item.pictures[0]}
-                      alt="First slide"
-                    />
+                    <Link to={`/productos/${item.slug}`}>
+                      <img
+                        className="d-block w-100 image_carrousel img-fluid "
+                        src={item.pictures[0]}
+                        alt="First slide"
+                      />
+                    </Link>
                     <Carousel.Caption key={index}>
                       <h3 className="carrousel-text">{item.name}</h3>
                       <p className="carrousel-text">{item.description}</p>
