@@ -24,20 +24,15 @@ export default function OneCategoryPage() {
     `https://electrohack-server.vercel.app/productos/categorias/${category}`
   );
 
-  const categoryProducts = categories.filter(
-    (product) => product.category === category
-  );
-
-  console.log("khe", categoryProducts);
-
   return (
     <>
       <Nav />
       <div className="container mt-5 pt-5">
-        <div className="row mt-5">
+        <h2 className="text-center">{category}</h2>
+        <div className="row ">
           {categories &&
             categories.map((category) => {
-              <OneCategory category={category} />;
+              return <OneCategory category={category} />;
             })}
         </div>
       </div>
