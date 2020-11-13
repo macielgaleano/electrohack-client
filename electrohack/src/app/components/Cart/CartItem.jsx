@@ -4,6 +4,7 @@ import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 import "./CartPage.css";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../../Redux/actions/actionsCart";
+import { increment, decrement } from "../../Redux/actions/actionsSales";
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -25,9 +26,19 @@ export default function CartItem({ item }) {
             <p>{item.description}</p>
           </div>
           <div className="col-lg-2 d-flex justify-content-center align-items-center">
-            <RemoveCircleIcon onClick={() => dispatch(removeProduct(item))} />
+            <RemoveCircleIcon
+              onClick={() => {
+                dispatch(removeProduct(item));
+                dispatch(decrement(item.price));
+              }}
+            />
             <span className="m-2">{item.cuantity}</span>
-            <AddCircleIcon onClick={() => dispatch(addProduct(item))} />
+            <AddCircleIcon
+              onClick={() => {
+                dispatch(addProduct(item));
+                dispatch(increment(item.price));
+              }}
+            />
           </div>
           <div className="col-lg-1 d-flex justify-content-center align-items-center">
             $ {Math.round(item.price)}

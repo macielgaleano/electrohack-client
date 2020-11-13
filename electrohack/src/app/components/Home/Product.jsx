@@ -6,6 +6,7 @@ import "./home.css";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../Redux/actions/actionsCart";
 import { Link } from "react-router-dom";
+import { increment } from "../../Redux/actions/actionsSales";
 
 export default function Product({ item }) {
   const dispatch = useDispatch();
@@ -33,7 +34,10 @@ export default function Product({ item }) {
             <div>
               <ShoppingCartIcon
                 style={{ color: green[500], fontSize: "40px" }}
-                onClick={() => dispatch(addProduct(item))}
+                onClick={() => {
+                  dispatch(addProduct(item));
+                  dispatch(increment(item.price));
+                }}
               ></ShoppingCartIcon>
             </div>
           </div>
