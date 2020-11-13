@@ -10,6 +10,7 @@ import "./OneProduct.css";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Link } from "react-router-dom";
 import FixedCart from "../components/Home/FixedCart";
+import { increment } from "../Redux/actions/actionsSales";
 
 const OneProduct = () => {
   const dispatch = useDispatch();
@@ -64,7 +65,10 @@ const OneProduct = () => {
                           <ShoppingCartIcon
                             key={index}
                             style={{ color: green[500], fontSize: "40px" }}
-                            onClick={() => dispatch(addProduct(product))}
+                            onClick={() => {
+                              dispatch(addProduct(product));
+                              dispatch(increment(product.price));
+                            }}
                           ></ShoppingCartIcon>
                         </div>
                       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CartItem from "./CartItem";
 import "./CartPage.css";
 import { useSelector } from "react-redux";
@@ -7,7 +7,7 @@ import "./CartPage.css";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
-  const [total, setTotal] = useState(0);
+  const total = useSelector((state) => state.salesReducer);
 
   console.log(cart);
   if (cart.length === 0) {
@@ -29,7 +29,9 @@ export default function Cart() {
       <>
         <div className="pay-box">
           <h5>TOTAL DEL CARRITO</h5>
-          <p>total: {total}</p>
+          <p>
+            Total : $ <strong>{Math.round(total)}</strong>
+          </p>
           <button className="btn btn-info active" style={{ width: "100%" }}>
             Pagar
           </button>
