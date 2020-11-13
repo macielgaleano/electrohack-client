@@ -48,8 +48,12 @@ export default function Nav(props) {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  let user = useSelector((state) => state.user);
+
   const loggout = () => {
-    axios;
+    axios.patch("https://electrohack-server.vercel.app/logout", {
+      email: user.user.email,
+    });
   };
 
   const menuId = "primary-search-account-menu";
@@ -64,9 +68,8 @@ export default function Nav(props) {
       onClose={handleMenuClose}
     >
       <h5 className="text-center pt-2 mb-3">
-        {useSelector(
-          (state) => state.user.user.firstname + " " + state.user.user.lastname
-        )}
+        {useSelector((state) => state.user.token) &&
+          user.user.firstname + " " + user.user.lastname}
       </h5>
       <MenuItem>
         {!useSelector((state) => state.user.token) && (
