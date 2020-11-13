@@ -13,6 +13,7 @@ import OneBrandPage from "./app/components/OneBrandPage";
 import OneCategoryPage from "./app/components/OneCategoryPage";
 import EditPage from "./app/components/Edit/EditPage";
 import OneProductPage from "./app/components/OneProductPage";
+import UserOrders from "./app/components/UserOrders";
 
 function App() {
   return (
@@ -80,6 +81,14 @@ function App() {
             path="/productos/:slug"
             component={OneProductPage}
           ></PublicRoute>
+          {
+            <PrivateRoute
+              restricted={true}
+              exact
+              path="/ordenes"
+              component={UserOrders}
+            ></PrivateRoute>
+          }
         </Switch>
       </div>
     </Router>
