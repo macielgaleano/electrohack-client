@@ -147,7 +147,7 @@ export default function Nav(props) {
         </p>
       </MenuItem>
       {useSelector((state) => state.user.token) && (
-        <>
+        <div>
           <MenuItem className="d-flex align-items-center justify-contentent-center">
             <p>
               {" "}
@@ -173,7 +173,7 @@ export default function Nav(props) {
               </Link>
             </p>
           </MenuItem>
-        </>
+        </div>
       )}
     </Menu>
   );
@@ -203,21 +203,21 @@ export default function Nav(props) {
               />
             </div>
             <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              <IconButton aria-label="show 4 new mails" color="inherit">
-                <Badge
-                  badgeContent={useSelector((state) => state.cart.length)}
-                  color="secondary"
+            <IconButton aria-label="show 4 new mails" color="inherit">
+              <Badge
+                badgeContent={useSelector((state) => state.cart.length)}
+                color="secondary"
+              >
+                <Link
+                  to="/carrito"
+                  className="text-white"
+                  style={{ textDecoration: "none" }}
                 >
-                  <Link
-                    to="/carrito"
-                    className="text-white"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <ShoppingCartIcon />
-                  </Link>
-                </Badge>
-              </IconButton>
+                  <ShoppingCartIcon />
+                </Link>
+              </Badge>
+            </IconButton>
+            <div className={classes.sectionDesktop}>
               <IconButton
                 aria-label="show 17 new notifications"
                 spacing={3}

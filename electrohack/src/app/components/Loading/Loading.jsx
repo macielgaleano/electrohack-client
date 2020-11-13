@@ -9,6 +9,7 @@ const Loading = () => {
         position: "fixed",
         justifyContent: "center",
         alignItems: "center",
+        width: "58%",
         zIndex: "1000",
       }}
     >
