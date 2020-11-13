@@ -20,7 +20,7 @@ export default function Product({ item }) {
             className="d-flex flex-column justify-content-start align-items-end"
             style={{ height: "120px" }}
           >
-            <p className="price text-dark ml-3"> ${item.price}</p>
+            <p className="price text-dark ml-3"> ${Math.round(item.price)}</p>
             <div>
               <ShoppingCartIcon
                 style={{ color: green[500], fontSize: "40px" }}

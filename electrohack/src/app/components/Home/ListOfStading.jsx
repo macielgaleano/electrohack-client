@@ -19,7 +19,7 @@ const ListOfStading = () => {
     <div className="container mt-5">
       <div className="row mt-5">
         <h3 className="mt-5 col-12 text-center mb-3">Nuestros productos destacados</h3>
-        <div className="col-6 mt-5">
+        <div className="col-md-6 col-sm-12 col-12 mt-5">
           <Carousel>
             {products &&
               products.map((item, index) => {
@@ -31,15 +31,18 @@ const ListOfStading = () => {
                       alt="First slide"
                     />
                     <Carousel.Caption key={index}>
-                      <h3 className="carrousel-text">{item.name}</h3>
-                      <p className="carrousel-text">{item.description}</p>
+                      <h3 className="carrousel-text p2">{item.name}</h3>
+                      <p className="carrousel-text price text-white ">
+                        {" "}
+                        ${Math.round(item.price)}
+                      </p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 );
               })}
           </Carousel>
         </div>
-        <div className="col-6 mt-5">
+        <div className="col-md-6 col-sm-12 col-12 mt-5">
           <Carousel>
             {products &&
               products.map((item, index) => {
@@ -51,8 +54,11 @@ const ListOfStading = () => {
                       alt="First slide"
                     />
                     <Carousel.Caption key={index}>
-                      <h3 className="carrousel-text">{item.name}</h3>
-                      <p className="carrousel-text">{item.description}</p>
+                      <h3 className="carrousel-text p2">{item.name}</h3>
+                      <p className="carrousel-text price text-white">
+                        {" "}
+                        ${Math.round(item.price)}
+                      </p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 );
