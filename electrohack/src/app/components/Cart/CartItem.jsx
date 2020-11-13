@@ -44,7 +44,7 @@ export default function CartItem({ item }) {
             $ {Math.round(item.price)}
           </div>
           <div className="col-lg-1 d-flex justify-content-center align-items-center">
-            $ {Math.round(item.price * item.cuantity)}
+            $ {Math.round(Math.round(item.price) * item.cuantity)}
           </div>
         </div>
       </div>

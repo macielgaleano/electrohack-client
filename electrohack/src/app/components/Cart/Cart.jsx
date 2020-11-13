@@ -2,14 +2,25 @@ import React from "react";
 import CartItem from "./CartItem";
 import "./CartPage.css";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./CartPage.css";
+import axios from "axios";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
   const total = useSelector((state) => state.salesReducer);
+  const history = useHistory();
 
-  console.log(cart);
+  function sendOrder(order) {
+    axios
+      .post("https://electrohack-server.vercel.app/api/pedidos", {
+        products: order,
+      })
+      .then((res) => {
+        history.push("/saludos");
+      });
+  }
+
   if (cart.length === 0) {
     return (
       <div className="mt-5 pt-5 empty-cart">
@@ -32,7 +43,11 @@ export default function Cart() {
           <p>
             Total : $ <strong>{Math.round(total)}</strong>
           </p>
-          <button className="btn btn-info active" style={{ width: "100%" }}>
+          <button
+            onClick={() => sendOrder(cart)}
+            className="btn btn-info active"
+            style={{ width: "100%" }}
+          >
             Pagar
           </button>
         </div>
