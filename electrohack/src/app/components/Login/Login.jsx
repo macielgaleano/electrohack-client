@@ -69,7 +69,7 @@ export default function Login() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Registarse
+          Login
         </Typography>
         <form className={classes.form} noValidate>
           <Grid item xs={12} className={classes.input}>

@@ -184,7 +184,7 @@ export default function Nav(props) {
         <AppBar position="fixed" className={classes.nav} id="back-to-top-anchor">
           <Toolbar>
             <Link to="/" className="text-white">
-              <Typography className={classes.title} variant="h6" noWrap>
+              <Typography className={classes.title} variant="h5" noWrap>
                 ELECTROHACK
               </Typography>
             </Link>
@@ -203,6 +203,16 @@ export default function Nav(props) {
               />
             </div>
             <div className={classes.grow} />
+            <Link to="/productos/categorias" className="text-white mr-3">
+              <Typography className={classes.title} variant="subtitle1" noWrap>
+                Categorias
+              </Typography>
+            </Link>
+            <Link to="/productos/marcas" className="text-white mr-5">
+              <Typography className={classes.title} variant="subtitle1" noWrap>
+                Marcas
+              </Typography>
+            </Link>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge
                 badgeContent={useSelector((state) => state.cart.length)}

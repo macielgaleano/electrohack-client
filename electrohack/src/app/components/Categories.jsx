@@ -21,7 +21,13 @@ export default function Categories() {
         categories.map((category) => {
           return (
             <p>
-              <Link to={`/productos/categorias/${category.name}`}>
+              <Link
+                style={{
+                  textDecoration: "none",
+                  fontSize: "25px",
+                }}
+                to={`/productos/categorias/${category.name}`}
+              >
                 {category.name}
               </Link>
             </p>

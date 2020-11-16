@@ -11,19 +11,20 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Link } from "react-router-dom";
 import FixedCart from "../components/Home/FixedCart";
 import { increment } from "../Redux/actions/actionsSales";
+import Carousel from "react-bootstrap/Carousel";
 
 const OneProduct = () => {
   const dispatch = useDispatch();
   const { slug } = useParams();
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:8000/productos/${products}`)
+    fetch(`https://electrohack-server.vercel.app/productos/${slug}`)
       .then((data) => data.json())
       .then((data) => {
+        console.log(data);
         setProducts(data);
       });
-  }, []);
-
+  }, [slug]);
   const productSlug = products.filter((product) => product.slug === slug);
 
   return (
@@ -73,7 +74,29 @@ const OneProduct = () => {
                         </div>
                       </div>
                       <div className="col-md-3">
-                        <img src={product.pictures[0]} alt="" />
+                        <Carousel>
+                          {products &&
+                            products.map((item, index) => {
+                              item.pictures.map((picture, index) => {
+                                return (
+                                  <Carousel.Item interval={2000}>
+                                    <img
+                                      className="d-block w-100 image_carrousel img-fluid "
+                                      src={picture}
+                                      alt="First slide"
+                                    />
+                                    <Carousel.Caption key={index}>
+                                      <h3 className="carrousel-text p2">{item.name}</h3>
+                                      <p className="carrousel-text price text-white">
+                                        {" "}
+                                        ${Math.round(item.price)}
+                                      </p>
+                                    </Carousel.Caption>
+                                  </Carousel.Item>
+                                );
+                              });
+                            })}
+                        </Carousel>
                       </div>
                     </div>
                   </div>

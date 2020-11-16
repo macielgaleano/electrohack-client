@@ -2,3 +2,18 @@
   height: 600px;
   width: 500px;
 }
+
+.bg-brands {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(7, 11, 36, 0.973),
+      rgba(10, 5, 9, 0.966)
+    ),
+    url("https://images.unsplash.com/photo-1580681149223-7bd3e4c2bd41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80");
+  padding-bottom: 400px;
+  background-size: cover;
+}
+
+.box {
+  background: white;
+}

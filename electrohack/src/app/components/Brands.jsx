@@ -6,25 +6,50 @@ import Nav from "./Nav/Nav";
 //MUESTRA LISTADO DE MARCAS
 
 export default function Brands() {
-  const [brand, setBrand] = useState([]);
+  const [brands, setBrands] = useState([]);
+  const [notRepitedBrands, setNotRepitedBrands] = useState([]);
   useEffect(() => {
-    fetch(`https://electrohack-server.vercel.app/productos/${brand}`)
+    fetch(`https://electrohack-server.vercel.app/productos/${brands}`)
       .then((data) => data.json())
       .then((data) => {
-        setBrand(data);
+        setBrands(data);
       });
   }, []);
+  let brands_aux = [];
+  for (let g = 0; g < brands.length; g++) {
+    brands_aux.push(brands[g].brand);
+  }
 
-  console.log(brand);
+  function removeDups(names) {
+    let unique = {};
+    names.forEach(function (i) {
+      if (!unique[i]) {
+        unique[i] = true;
+      }
+    });
+    return Object.keys(unique);
+  }
+
+  brands_aux = removeDups(brands_aux);
+  console.log(brands_aux);
 
   return (
     <>
       <Nav />
-      {brand &&
-        brand.map((item) => {
+
+      {brands_aux &&
+        brands_aux.map((item, index) => {
           return (
-            <p>
-              <Link to={`/productos/marcas/${item.brand}`}>{item.brand}</Link>
+            <p key={index}>
+              <Link
+                to={`/productos/marcas/${item}`}
+                style={{
+                  textDecoration: "none",
+                  fontSize: "25px",
+                }}
+              >
+                {item}{" "}
+              </Link>
             </p>
           );
         })}
