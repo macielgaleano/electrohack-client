@@ -86,7 +86,7 @@ export default function Nav(props) {
       </MenuItem>
       <MenuItem>
         {useSelector((state) => state.user.token) && (
-          <Link to="/configuracion" className="text-dark">
+          <Link to="/usuarios/cuenta" className="text-dark">
             {" "}
             <SettingsIcon className="mr-2" />
             Configuracion
@@ -160,7 +160,7 @@ export default function Nav(props) {
           <MenuItem onClick={handleProfileMenuOpen}>
             <p>
               {" "}
-              <Link className="text-dark" to="/ordenes">
+              <Link className="text-dark" to="/usuarios/cuenta">
                 Configuration
               </Link>
             </p>

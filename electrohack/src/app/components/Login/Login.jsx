@@ -102,7 +102,7 @@ export default function Login() {
             className={classes.submit}
             onClick={login}
           >
-            Registrate
+            Login
           </Button>
           <Grid container justify="flex-end">
             <Grid item>

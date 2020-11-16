@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useSelector } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    paddingTop: "30px",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function EditForm() {
   const classes = useStyles();
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.user);
 
   const [firstname, setfirstname] = React.useState(user.firstname);
   const [lastname, setLastname] = useState(user.firstname);
@@ -121,9 +123,7 @@ export default function EditForm() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() =>
-              updateUserData(firstname, lastname, address, phone, email)
-            }
+            onClick={() => updateUserData(firstname, lastname, address, phone, email)}
           >
             Actualizar
           </Button>

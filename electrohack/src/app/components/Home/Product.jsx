@@ -14,16 +14,14 @@ export default function Product({ item }) {
     <div className="col-sm-6 col-12 col-md-3">
       <div className="card text-white mt-3 mb-4">
         <Link to={`/productos/${item.slug}`}>
-          <img
-            className="card-img-top img-fluid image"
-            src={item.pictures[0]}
-            alt=""
-          />
+          <img className="card-img-top img-fluid image" src={item.pictures[0]} alt="" />
         </Link>
         <div className="card-body d-flex justify-content-between align-items-start">
           <div className="d-flex flex-column justify-content-end align-items-end">
             <Link to={`/productos/${item.slug}`}>
-              <h4 className="lead text-dark name">{item.name}</h4>
+              <h4 className="lead text-dark name">
+                {item.name.length > 40 ? item.name.slice(0, 40) + "..." : item.name}
+              </h4>
             </Link>
           </div>
           <div
