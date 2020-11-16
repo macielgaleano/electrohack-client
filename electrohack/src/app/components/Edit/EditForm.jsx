@@ -34,21 +34,32 @@ const useStyles = makeStyles((theme) => ({
 export default function EditForm() {
   const classes = useStyles();
   const user = useSelector((state) => state.user.user);
+  const token = useSelector((state) => state.user.token);
 
   const [firstname, setfirstname] = React.useState(user.firstname);
-  const [lastname, setLastname] = useState(user.firstname);
-  const [address, setAddress] = useState(user.firstname);
-  const [phone, setPhone] = useState(user.firstname);
-  const [email, setEmail] = useState(user.firstname);
+  const [lastname, setLastname] = useState(user.lastname);
+  const [address, setAddress] = useState(user.address);
+  const [phone, setPhone] = useState(user.phone);
+  const [email, setEmail] = useState(user.email);
 
-  let updateUserData = (firstname, lastname, address, phone, email) => {
-    axios.post("https://electrohack-server.vercel.app/api/usuarios", {
-      firstname,
-      lastname,
-      email,
-      address,
-      phone,
-    });
+  let updateUserData = async (firstname, lastname, address, phone, email) => {
+    let userChanged = await axios.put(
+      "https://electrohack-server.vercel.app/api/usuarios",
+      {
+        firstname,
+        lastname,
+        email,
+        address,
+        phone,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    console.log(userChanged);
   };
 
   return (
@@ -112,18 +123,20 @@ export default function EditForm() {
                 required
                 fullWidth
                 label="Numero de telefono"
-                value={address}
+                value={phone}
                 onChange={(e) => setPhone(e.target.value)}
               />
             </Grid>
           </Grid>
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => updateUserData(firstname, lastname, address, phone, email)}
+            onClick={() =>
+              updateUserData(firstname, lastname, address, phone, email)
+            }
           >
             Actualizar
           </Button>
