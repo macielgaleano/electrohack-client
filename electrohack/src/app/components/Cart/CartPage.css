@@ -24,3 +24,13 @@ h2 {
   border-radius: 10px;
   padding: 30px;
 }
+
+@media (max-width: 1800px) {
+  .pay-box {
+    background-color: aliceblue;
+    position: relative;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+}

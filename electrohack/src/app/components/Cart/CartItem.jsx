@@ -5,6 +5,7 @@ import "./CartPage.css";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../../Redux/actions/actionsCart";
 import { increment, decrement } from "../../Redux/actions/actionsSales";
+import { Link } from "react-router-dom";
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -21,7 +22,9 @@ export default function CartItem({ item }) {
             </div>
           </div>
           <div className="col-lg-6">
-            <h3>{item.name}</h3>
+            <h3>
+              <Link to={`/productos/${item.slug}`}>{item.name}</Link>
+            </h3>
             <p>{item.brand}</p>
             <p>{item.description}</p>
           </div>

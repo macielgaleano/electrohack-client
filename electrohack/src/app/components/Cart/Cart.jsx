@@ -38,19 +38,6 @@ export default function Cart() {
   } else {
     return (
       <>
-        <div className="pay-box">
-          <h5>TOTAL DEL CARRITO</h5>
-          <p>
-            Total : $ <strong>{Math.round(total)}</strong>
-          </p>
-          <button
-            onClick={() => sendOrder(cart)}
-            className="btn btn-info active"
-            style={{ width: "100%" }}
-          >
-            Pagar
-          </button>
-        </div>
         <div className="container mt-5 pt-5">
           <div className="row">
             <div className="col-lg-8 d-flex justify-content-center align-items-center">
@@ -70,6 +57,19 @@ export default function Cart() {
             cart.map((item) => {
               return <CartItem key={item.name} item={item} />;
             })}
+        </div>
+        <div className="pay-box">
+          <h5>TOTAL DEL CARRITO</h5>
+          <p>
+            Total : $ <strong>{Math.round(total)}</strong>
+          </p>
+          <button
+            onClick={() => sendOrder(cart)}
+            className="btn btn-info active"
+            style={{ width: "100%" }}
+          >
+            Pagar
+          </button>
         </div>
       </>
     );
