@@ -7,15 +7,27 @@ import "./CartPage.css";
 import axios from "axios";
 
 export default function Cart() {
+  const token = useSelector((state) => state.user.token);
+  const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const total = useSelector((state) => state.salesReducer);
   const history = useHistory();
 
-  function sendOrder(order) {
+  function sendOrder(order, id) {
     axios
-      .post("https://electrohack-server.vercel.app/api/pedidos", {
-        products: order,
-      })
+      .post(
+        "https://electrohack-server.vercel.app/api/pedidos",
+        {
+          products: order,
+          user: id,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         history.push("/saludos");
       });
@@ -64,7 +76,7 @@ export default function Cart() {
             Total : $ <strong>{Math.round(total)}</strong>
           </p>
           <button
-            onClick={() => sendOrder(cart)}
+            onClick={() => sendOrder(cart, user.id)}
             className="btn btn-info active"
             style={{ width: "100%" }}
           >
