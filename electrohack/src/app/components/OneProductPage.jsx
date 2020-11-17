@@ -21,10 +21,9 @@ const OneProduct = () => {
     fetch(`https://electrohack-server.vercel.app/productos/${slug}`)
       .then((data) => data.json())
       .then((data) => {
-        console.log(data);
         setProducts(data);
       });
-  }, [slug]);
+  }, []);
   const productSlug = products.filter((product) => product.slug === slug);
 
   return (
@@ -47,7 +46,7 @@ const OneProduct = () => {
                   <div key={index}>
                     <h1>{product.name}</h1>
                     <div className="row">
-                      <div className="col-md-8 " key={index}>
+                      <div className="col-md-12 " key={index}>
                         <p className="mt-2 pt-2">
                           <strong>Descripción:</strong> {product.description}
                         </p>
@@ -73,28 +72,20 @@ const OneProduct = () => {
                           ></ShoppingCartIcon>
                         </div>
                       </div>
-                      <div className="col-md-3">
+                      <h1 className="col-12 mt-5">Fotos del producto </h1>
+                      <div className="col-md-6 mt-5 mx-auto" style={{ height: 700 }}>
                         <Carousel>
-                          {products &&
-                            products.map((item, index) => {
-                              item.pictures.map((picture, index) => {
-                                return (
-                                  <Carousel.Item interval={2000}>
-                                    <img
-                                      className="d-block w-100 image_carrousel img-fluid "
-                                      src={picture}
-                                      alt="First slide"
-                                    />
-                                    <Carousel.Caption key={index}>
-                                      <h3 className="carrousel-text p2">{item.name}</h3>
-                                      <p className="carrousel-text price text-white">
-                                        {" "}
-                                        ${Math.round(item.price)}
-                                      </p>
-                                    </Carousel.Caption>
-                                  </Carousel.Item>
-                                );
-                              });
+                          {productSlug &&
+                            productSlug[0].pictures.map((item, index) => {
+                              return (
+                                <Carousel.Item>
+                                  <img
+                                    className="d-block w-100"
+                                    src={item}
+                                    alt="First slide"
+                                  />
+                                </Carousel.Item>
+                              );
                             })}
                         </Carousel>
                       </div>
