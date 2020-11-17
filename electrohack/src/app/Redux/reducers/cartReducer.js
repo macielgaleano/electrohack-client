@@ -8,7 +8,7 @@ function cartReducer(state = [], action) {
       );
 
       if (!addingProduct) {
-        action.payload.cuantity = 1;
+        action.payload.quantity = 1;
         return [...state, action.payload].sort(function (a, b) {
           if (a.name > b.name) {
             return 1;
@@ -25,20 +25,20 @@ function cartReducer(state = [], action) {
         );
         return [
           ...newState,
-          { ...addingProduct, cuantity: addingProduct.cuantity + 1 },
+          { ...addingProduct, quantity: addingProduct.quantity + 1 },
         ].sort(sortCart);
       }
     case "REMOVE_PRODUCT":
       const removingProduct = state.find(
         (product) => product.name === action.payload.name
       );
-      if (removingProduct.cuantity > 1) {
+      if (removingProduct.quantity > 1) {
         const newState = state.filter(
           (item) => item.name !== removingProduct.name
         );
         return [
           ...newState,
-          { ...removingProduct, cuantity: removingProduct.cuantity - 1 },
+          { ...removingProduct, quantity: removingProduct.quantity - 1 },
         ].sort(sortCart);
       } else {
         const newState = state.filter(

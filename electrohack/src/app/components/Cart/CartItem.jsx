@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
 
-  if (item.cuantity < 1) {
+  if (item.quantity < 1) {
     return <></>;
   } else {
     return (
@@ -35,7 +35,7 @@ export default function CartItem({ item }) {
                 dispatch(decrement(item.price));
               }}
             />
-            <span className="m-2">{item.cuantity}</span>
+            <span className="m-2">{item.quantity}</span>
             <AddCircleIcon
               onClick={() => {
                 dispatch(addProduct(item));
@@ -47,7 +47,7 @@ export default function CartItem({ item }) {
             $ {Math.round(item.price)}
           </div>
           <div className="col-lg-1 d-flex justify-content-center align-items-center">
-            $ {Math.round(Math.round(item.price) * item.cuantity)}
+            $ {Math.round(Math.round(item.price) * item.quantity)}
           </div>
         </div>
       </div>

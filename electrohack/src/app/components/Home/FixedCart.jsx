@@ -29,7 +29,7 @@ const FixedCart = () => {
                             {item.name.slice(0, 20)}
                             <br></br>
                             <h4 className="mt-4">
-                              ${Math.round(item.cuantity * item.price)}
+                              ${Math.round(item.quantity * item.price)}
                             </h4>
                             {}
                             <RemoveCircleIcon
@@ -38,7 +38,7 @@ const FixedCart = () => {
                                 dispatch(decrement(item.price));
                               }}
                             />
-                            <span className="m-2">{item.cuantity}</span>
+                            <span className="m-2">{item.quantity}</span>
                             <AddCircleIcon
                               onClick={() => {
                                 dispatch(addProduct(item));
