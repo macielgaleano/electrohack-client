@@ -13,24 +13,25 @@ export default function Cart() {
   const total = useSelector((state) => state.salesReducer);
   const history = useHistory();
 
-  function sendOrder(order, id) {
-    axios
-      .post(
-        "https://electrohack-server.vercel.app/api/pedidos",
-        {
-          products: order,
-          user: id,
+  async function sendOrder(order) {
+    let sendedOrder = await axios.post(
+      "https://electrohack-server.vercel.app/api/pedidos",
+      {
+        products: order,
+        mode: "cors",
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+          "Access-Control-Allow-Origin": "*",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
-      .then((res) => {
-        history.push("/saludos");
-      });
+      }
+    );
+    if (await sendedOrder) {
+      console.log(sendedOrder);
+      history.push("/saludos");
+    }
   }
 
   if (cart.length === 0) {
