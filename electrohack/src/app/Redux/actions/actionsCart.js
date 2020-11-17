@@ -12,4 +12,11 @@ function removeProduct(product) {
   };
 }
 
-export { addProduct, removeProduct };
+function restartCart(cart) {
+  return {
+    type: "RESTART_CART",
+    payload: cart,
+  };
+}
+
+export { addProduct, removeProduct, restartCart };

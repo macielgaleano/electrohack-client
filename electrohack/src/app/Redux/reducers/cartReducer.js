@@ -46,6 +46,8 @@ function cartReducer(state = [], action) {
         );
         return newState.sort(sortCart);
       }
+    case "RESTART_CART":
+      return action.payload;
     default:
       return state.sort(sortCart);
   }

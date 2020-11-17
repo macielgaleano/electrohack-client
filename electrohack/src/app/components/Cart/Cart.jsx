@@ -1,10 +1,11 @@
 import React from "react";
 import CartItem from "./CartItem";
 import "./CartPage.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import "./CartPage.css";
 import axios from "axios";
+import { restartCart } from "../../Redux/actions/actionsCart";
 
 export default function Cart() {
   const token = useSelector((state) => state.user.token);
@@ -12,6 +13,7 @@ export default function Cart() {
   const cart = useSelector((state) => state.cart);
   const total = useSelector((state) => state.salesReducer);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   async function sendOrder(order) {
     let sendedOrder = await axios.post(
@@ -27,7 +29,6 @@ export default function Cart() {
       }
     );
     if (await sendedOrder) {
-      console.log(sendedOrder);
       history.push("/saludos");
     }
   }
@@ -75,7 +76,10 @@ export default function Cart() {
             Total : $ <strong>{Math.round(total)}</strong>
           </p>
           <button
-            onClick={() => sendOrder(cart, user.id)}
+            onClick={() => {
+              sendOrder(cart, user.id);
+              dispatch(restartCart([]));
+            }}
             className="btn btn-info active"
             style={{ width: "100%" }}
           >
