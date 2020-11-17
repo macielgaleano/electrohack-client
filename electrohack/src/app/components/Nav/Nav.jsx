@@ -202,17 +202,18 @@ export default function Nav(props) {
                 inputProps={{ "aria-label": "search" }}
               />
             </div>
-            <div className={classes.grow} />
-            <Link to="/productos/categorias" className="text-white mr-3">
+            <Link to="/productos/categorias" className="text-white mr-1">
               <Typography className={classes.title} variant="subtitle1" noWrap>
-                Categorias
+                Categorias /
               </Typography>
             </Link>
-            <Link to="/productos/marcas" className="text-white mr-5">
+            <Link to="/productos/marcas" className="text-white mr-4">
               <Typography className={classes.title} variant="subtitle1" noWrap>
                 Marcas
               </Typography>
             </Link>
+            <div className={classes.grow} />
+
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge
                 badgeContent={useSelector((state) => state.cart.length)}
@@ -258,6 +259,11 @@ export default function Nav(props) {
               >
                 <MoreIcon />
               </IconButton>
+            </div>
+            <div className="ml-2">
+              <Typography className={classes.title} variant="subtitle1" noWrap>
+                {user && user.user.firstname + " " + user.user.lastname}
+              </Typography>
             </div>
           </Toolbar>
         </AppBar>
