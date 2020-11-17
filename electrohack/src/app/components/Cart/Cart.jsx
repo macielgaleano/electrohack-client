@@ -18,13 +18,11 @@ export default function Cart() {
       "https://electrohack-server.vercel.app/api/pedidos",
       {
         products: order,
-        mode: "cors",
       },
       {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
-          "Access-Control-Allow-Origin": "*",
         },
       }
     );
