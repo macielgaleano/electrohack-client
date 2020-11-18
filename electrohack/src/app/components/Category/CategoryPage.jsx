@@ -1,6 +1,6 @@
 import React from "react";
 import Categories from "./Categories";
-import Nav from "./Nav/Nav";
+import Nav from "../Nav/Nav";
 import "./CategoryPage.css";
 export default function CategoryPage() {
   return (

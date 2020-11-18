@@ -7,12 +7,12 @@ import Login from "./app/components/Login/Login";
 import Register from "./app/components/Register/Register";
 import Home from "./app/components/Home/Home";
 import CartPage from "./app/components/Cart/CartPage";
-import CategoryPage from "./app/components/CategoryPage";
-import BrandsPage from "./app/components/BrandsPage";
-import OneBrandPage from "./app/components/OneBrandPage";
-import OneCategoryPage from "./app/components/OneCategoryPage";
+import CategoryPage from "./app/components/Category/CategoryPage";
+import BrandsPage from "./app/components/Brands/BrandsPage";
+import OneBrandPage from "./app/components/Brand/OneBrandPage";
+import OneCategoryPage from "./app/components/CategoryProducts/OneCategoryPage";
 import EditPage from "./app/components/Edit/EditPage";
-import OneProductPage from "./app/components/OneProductPage";
+import OneProductPage from "./app/components/Product/OneProductPage";
 import UserOrders from "./app/components/UserOrders";
 
 function App() {
@@ -26,12 +26,12 @@ function App() {
             path="/login"
             component={Login}
           ></PublicRoute>
-          <PublicRoute
+          <PrivateRoute
             restricted={false}
             exact
             path="/usuarios/cuenta"
             component={EditPage}
-          ></PublicRoute>
+          ></PrivateRoute>
           <PublicRoute
             restricted={false}
             exact

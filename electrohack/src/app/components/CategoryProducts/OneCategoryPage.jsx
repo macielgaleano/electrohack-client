@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { green } from "@material-ui/core/colors";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useParams } from "react-router-dom";
-import Nav from "./Nav/Nav";
+import Nav from "../Nav/Nav";
 import OneCategory from "./OneCategory";
 
 export default function OneCategoryPage() {

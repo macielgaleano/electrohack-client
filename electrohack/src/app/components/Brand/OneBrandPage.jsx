@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
-import Nav from "./Nav/Nav";
+import Nav from "../Nav/Nav";
 import OneBrand from "./OneBrand";
 
 export default function OneBrandPage() {

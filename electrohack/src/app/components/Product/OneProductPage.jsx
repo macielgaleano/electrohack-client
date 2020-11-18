@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Nav from "./Nav/Nav";
+import Nav from "../Nav/Nav";
 import { green } from "@material-ui/core/colors";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../Redux/actions/actionsCart";
+import { addProduct } from "../../Redux/actions/actionsCart";
 import "./OneProduct.css";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { Link } from "react-router-dom";
-import FixedCart from "../components/Home/FixedCart";
-import { increment } from "../Redux/actions/actionsSales";
+import FixedCart from "../../components/Home/FixedCart";
+import { increment } from "../../Redux/actions/actionsSales";
 import Carousel from "react-bootstrap/Carousel";
 
 const OneProduct = () => {
@@ -73,7 +73,10 @@ const OneProduct = () => {
                         </div>
                       </div>
                       <h1 className="col-12 mt-5">Fotos del producto </h1>
-                      <div className="col-md-6 mt-5 mx-auto" style={{ height: 700 }}>
+                      <div
+                        className="col-md-6 mt-5 mx-auto"
+                        style={{ height: 700 }}
+                      >
                         <Carousel>
                           {productSlug &&
                             productSlug[0].pictures.map((item, index) => {
