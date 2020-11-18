@@ -79,7 +79,7 @@ export default function Cart() {
           </p>
           <button
             onClick={() => {
-              sendOrder(cart, user.id);
+              sendOrder(cart, total);
               dispatch(restartCart([]));
               dispatch(restartTotal());
             }}
