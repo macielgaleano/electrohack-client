@@ -1,10 +1,11 @@
 import React from "react";
 import Brands from "./Brands";
 import "./BrandsPage.css";
-
+import FixedCart from "../Home/FixedCart";
 export default function BrandsPage() {
   return (
     <>
+      <FixedCart></FixedCart>
       <div className="container pt-5 mt-5">
         <div className="row">
           <div className="col-md-3">

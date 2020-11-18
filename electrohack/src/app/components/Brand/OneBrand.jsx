@@ -1,10 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { green } from "@material-ui/core/colors";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { green } from "@material-ui/core/colors";
+import { addProduct } from "../../Redux/actions/actionsCart";
+import { increment } from "../../Redux/actions/actionsSales";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 export default function OneBrand({ brand }) {
+  const dispatch = useDispatch();
   return (
     <>
       <div className="col-sm-6 col-12 col-md-3">
@@ -27,6 +31,10 @@ export default function OneBrand({ brand }) {
               <div>
                 <ShoppingCartIcon
                   style={{ color: green[500], fontSize: "40px" }}
+                  onClick={() => {
+                    dispatch(addProduct(brand));
+                    dispatch(increment(brand.price));
+                  }}
                 ></ShoppingCartIcon>
               </div>
             </div>

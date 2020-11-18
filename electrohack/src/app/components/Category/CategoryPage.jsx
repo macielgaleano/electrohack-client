@@ -2,10 +2,13 @@ import React from "react";
 import Categories from "./Categories";
 import Nav from "../Nav/Nav";
 import "./CategoryPage.css";
+import FixedCart from "../Home/FixedCart";
+
 export default function CategoryPage() {
   return (
     <>
       <Nav />
+      <FixedCart></FixedCart>
       <div className="container mt-5 pt-5">
         <div className="row">
           <div className="col-md-5">
