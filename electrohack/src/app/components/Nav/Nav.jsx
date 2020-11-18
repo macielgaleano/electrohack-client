@@ -267,7 +267,7 @@ export default function Nav(props) {
                 <MoreIcon />
               </IconButton>
             </div>
-            <div className="ml-2">
+            <div className="ml-2 username-nav">
               <Typography className={classes.title} variant="subtitle1" noWrap>
                 {!isEmpty(user) && user.user.firstname + " " + user.user.lastname}
               </Typography>

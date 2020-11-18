@@ -21,30 +21,24 @@ const useStyles = makeStyles((theme) => ({
 export default function Product({ item }) {
   const dispatch = useDispatch();
   return (
-    <div className="col-sm-6 col-12 col-md-3">
-      <div className="card text-white mt-3 mb-4">
+    <div className="col-sm-6 col-12 col-md-3 ">
+      <div className="card text-white mt-3 mb-4 d-flex flex-column">
         <Link to={`/productos/${item.slug}`}>
-          <img
-            className="card-img-top img-fluid image"
-            src={item.pictures[0]}
-            alt=""
-          />
+          <img className="card-img-top img-fluid image" src={item.pictures[0]} alt="" />
         </Link>
-        <div className="card-body d-flex justify-content-between align-items-start">
-          <div className="d-flex flex-column justify-content-end align-items-end">
+        <div className="card-body d-flex flex-column">
+          <div className="d-flex flex-column ">
             <Link to={`/productos/${item.slug}`}>
               <h4 className="lead text-dark name">
-                {item.name.length > 40
-                  ? item.name.slice(0, 40) + "..."
-                  : item.name}
+                {item.name.length > 40 ? item.name.slice(0, 40) + "..." : item.name}
               </h4>
             </Link>
           </div>
           <div
-            className="d-flex flex-column justify-content-start align-items-end"
+            className="d-flex flex-column justify-content-end"
             style={{ height: "120px" }}
           >
-            <p className="price text-dark ml-3"> ${Math.round(item.price)}</p>
+            <p className="price text-dark"> ${Math.round(item.price)}</p>
             <div>
               <Button
                 onClick={() => {
@@ -56,7 +50,7 @@ export default function Product({ item }) {
               >
                 Comprar
                 <ShoppingCartIcon
-                  style={{ color: green[5000], fontSize: "17px" }}
+                  style={{ color: green[5000], fontSize: "18px", marginRight: "5px" }}
                 />
               </Button>
             </div>

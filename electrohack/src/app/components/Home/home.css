@@ -1,15 +1,8 @@
 .image {
   object-fit: cover;
   max-width: 100%;
-  max-height: 300px;
+  max-height: 200px;
   height: 300px;
-}
-
-.image_carrousel {
-  object-fit: cover;
-  max-width: 50%;
-  max-height: 400px;
-  height: 400px;
 }
 
 body {
@@ -34,4 +27,22 @@ body {
 }
 .p1 {
   font-size: 0.8rem;
+}
+
+.poster-bg {
+  height: 600px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(12, 17, 53, 0.705),
+      rgba(43, 3, 43, 0.589)
+    ),
+    url("https://images.unsplash.com/photo-1461151304267-38535e780c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80");
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-weight: 100;
+}
+.subtitle span {
+  color: #f50057;
 }

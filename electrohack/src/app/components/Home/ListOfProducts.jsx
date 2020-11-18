@@ -27,24 +27,13 @@ const ListOfProducts = () => {
       });
   });
 
-  let getData = () => {
-    setProducts([...products, ...products]);
-  };
-
   // useDispatch(actionListProducts(products));
   return (
     <div className="container ">
-      <InfiniteScroll
-        dataLength={products}
-        next={getData}
-        hasMore={true}
-        loader={<Loading></Loading>}
-      >
+      <InfiniteScroll dataLength={products} hasMore={true} loader={<Loading></Loading>}>
         <div className="row mt-5">
           {products &&
-            products.map((item, index) => (
-              <Product item={item} key={index}></Product>
-            ))}
+            products.map((item, index) => <Product item={item} key={index}></Product>)}
         </div>
       </InfiniteScroll>
     </div>

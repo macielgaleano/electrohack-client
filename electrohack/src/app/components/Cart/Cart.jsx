@@ -31,7 +31,7 @@ export default function Cart() {
       }
     );
     if (await sendedOrder) {
-      history.push("/saludos");
+      history.push("/ordenes");
     }
   }
 

@@ -20,31 +20,16 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <PublicRoute
-            restricted={false}
-            exact
-            path="/login"
-            component={Login}
-          />
+          <PublicRoute restricted={false} exact path="/login" component={Login} />
           <PrivateRoute
             restricted={false}
             exact
             path="/usuarios/cuenta"
             component={EditPage}
           />
-          <PublicRoute
-            restricted={false}
-            exact
-            path="/carrito"
-            component={CartPage}
-          />
+          <PublicRoute restricted={false} exact path="/carrito" component={CartPage} />
 
-          <PublicRoute
-            restricted={false}
-            exact
-            path="/registro"
-            component={Register}
-          />
+          <PublicRoute restricted={false} exact path="/registro" component={Register} />
           <PublicRoute
             restricted={false}
             exact
@@ -77,12 +62,7 @@ function App() {
             component={OneProductPage}
           />
 
-          <PrivateRoute
-            restricted={true}
-            exact
-            path="/ordenes"
-            component={UserOrders}
-          />
+          <PrivateRoute restricted={true} exact path="/ordenes" component={UserOrders} />
         </Switch>
       </div>
     </Router>

@@ -21,7 +21,7 @@ export default function OneCategoryPage() {
 
   return (
     <>
-      <FixedCart></FixedCart>
+      {/* <FixedCart></FixedCart> */}
       <Nav />
       <div className="container mt-5 pt-5">
         <h2 className="text-center">{category}</h2>

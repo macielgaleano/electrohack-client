@@ -8,7 +8,7 @@ export default function CategoryPage() {
   return (
     <>
       <Nav />
-      <FixedCart></FixedCart>
+      {/* <FixedCart></FixedCart> */}
       <div className="container mt-5 pt-5">
         <div className="row" style={{ paddingBottom: "400px" }}>
           <div className="col-md-5">

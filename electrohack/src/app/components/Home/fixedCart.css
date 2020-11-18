@@ -21,4 +21,7 @@
   .image_carrousel {
     height: 300px;
   }
+  .username-nav {
+    display: none;
+  }
 }

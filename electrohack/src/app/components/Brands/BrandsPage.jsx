@@ -5,7 +5,7 @@ import FixedCart from "../Home/FixedCart";
 export default function BrandsPage() {
   return (
     <>
-      <FixedCart></FixedCart>
+      {/* <FixedCart></FixedCart> */}
       <div className="container pt-5 mt-5">
         <div className="row">
           <div className="col-md-3">

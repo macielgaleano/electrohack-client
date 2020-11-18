@@ -12,6 +12,7 @@ import Container from "@material-ui/core/Container";
 import { useHistory } from "react-router-dom";
 import { actionRegister } from "../../Redux/actions/actionRegister";
 import axios from "axios";
+import { Alert, AlertTitle } from "@material-ui/lab";
 import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
+  const [alertStyle, setAlertStyle] = useState("none");
   const classes = useStyles();
   const history = useHistory();
   const dispatch = useDispatch();
@@ -57,7 +59,14 @@ export default function Login() {
       })
       .then((user) => {
         dispatch(actionRegister(user.data));
-        history.push("/");
+        if (user.data.token === undefined) {
+          console.log("si");
+          setAlertStyle("block");
+          history.push("/login");
+        } else {
+          setAlertStyle("none");
+          history.push("/");
+        }
       });
   };
 
@@ -111,6 +120,10 @@ export default function Login() {
               </Link>
             </Grid>
           </Grid>
+          <Alert severity="error" style={{ diplay: alertStyle, marginTop: "20px" }}>
+            <AlertTitle>Error</AlertTitle>
+            Los datos ingresados no son correctos — <strong>Intenta nuevamente!</strong>
+          </Alert>
         </form>
       </div>
     </Container>

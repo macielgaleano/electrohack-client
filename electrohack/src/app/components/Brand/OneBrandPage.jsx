@@ -19,7 +19,7 @@ export default function OneBrandPage() {
   const brandProducts = products.filter((product) => product.brand === brand);
   return (
     <>
-      <FixedCart></FixedCart>
+      {/* <FixedCart></FixedCart> */}
       <Nav />
 
       <div className="container mt-5 pt-5">

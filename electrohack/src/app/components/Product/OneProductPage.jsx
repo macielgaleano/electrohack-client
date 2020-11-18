@@ -39,7 +39,7 @@ const OneProduct = () => {
   return (
     <>
       <Nav />
-      <FixedCart></FixedCart>
+      {/* <FixedCart></FixedCart> */}
 
       <div
         className="container mt-5 pt-5"
@@ -88,10 +88,7 @@ const OneProduct = () => {
                         </div>
                       </div>
                       <h1 className="col-12 mt-5">Fotos del producto </h1>
-                      <div
-                        className="col-md-6 mt-5 mx-auto"
-                        style={{ height: 700 }}
-                      >
+                      <div className="col-md-6 mt-5 mx-auto" style={{ height: 700 }}>
                         <Carousel>
                           {productSlug &&
                             productSlug[0].pictures.map((item, index) => {

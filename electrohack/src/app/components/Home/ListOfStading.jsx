@@ -33,13 +33,6 @@ const ListOfStading = () => {
                         alt="First slide"
                       />
                     </Link>
-                    <Carousel.Caption key={index}>
-                      <h3 className="carrousel-text p2">{item.name}</h3>
-                      <p className="carrousel-text price text-white ">
-                        {" "}
-                        ${Math.round(item.price)}
-                      </p>
-                    </Carousel.Caption>
                   </Carousel.Item>
                 );
               })}
@@ -58,13 +51,6 @@ const ListOfStading = () => {
                         alt="First slide"
                       />
                     </Link>
-                    <Carousel.Caption key={index}>
-                      <h3 className="carrousel-text p2">{item.name}</h3>
-                      <p className="carrousel-text price text-white">
-                        {" "}
-                        ${Math.round(item.price)}
-                      </p>
-                    </Carousel.Caption>
                   </Carousel.Item>
                 );
               })}
