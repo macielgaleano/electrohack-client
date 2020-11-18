@@ -46,17 +46,23 @@ const OneProduct = () => {
         style={{ paddingLeft: 0, paddingRight: 0, paddingBottom: "400px" }}
       >
         <div>
-          <Link to="/" name="" id="" className="btn btn-info mb-3">
+          <Link to="/" name="" id="" className="text-secondary mb-5">
             <ArrowBackIcon></ArrowBackIcon>Volver al inicio
           </Link>
-          <div className="box-product">
+          <div className="">
             {productSlug &&
               productSlug.map((product, index) => {
                 return (
                   <div key={index}>
-                    <h1>{product.name}</h1>
-                    <div className="row">
-                      <div className="col-md-12 " key={index}>
+                    <div className="row mt-5">
+                      <div className="col-md-8 mt-5 mx-auto col-11 col-sm-11">
+                        <img src={product.pictures[0]} alt="" />
+                      </div>
+                      <div
+                        className="col-md-4 mt-5 col-11 col-sm-11 mx-auto "
+                        key={index}
+                      >
+                        <h1>{product.name}</h1>
                         <p className="mt-2 pt-2">
                           <strong>Descripción:</strong> {product.description}
                         </p>
@@ -86,23 +92,6 @@ const OneProduct = () => {
                             />
                           </Button>
                         </div>
-                      </div>
-                      <h1 className="col-12 mt-5">Fotos del producto </h1>
-                      <div className="col-md-6 mt-5 mx-auto" style={{ height: 700 }}>
-                        <Carousel>
-                          {productSlug &&
-                            productSlug[0].pictures.map((item, index) => {
-                              return (
-                                <Carousel.Item>
-                                  <img
-                                    className="d-block w-100"
-                                    src={item}
-                                    alt="First slide"
-                                  />
-                                </Carousel.Item>
-                              );
-                            })}
-                        </Carousel>
                       </div>
                     </div>
                   </div>

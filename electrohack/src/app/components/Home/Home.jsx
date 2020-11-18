@@ -9,6 +9,7 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FixedCart from "./FixedCart";
 import Poster from "./Poster";
+import "./fixedCart.css";
 
 const Home = (props) => {
   return (
@@ -16,7 +17,7 @@ const Home = (props) => {
       <Nav className="mb-4"></Nav>
       <Poster></Poster>
       {/* <FixedCart></FixedCart> */}
-      <ListOfStading></ListOfStading>
+      <ListOfStading className="destacados"></ListOfStading>
       <ListOfProducts></ListOfProducts>
       <ScrollTop {...props}>
         <Fab
