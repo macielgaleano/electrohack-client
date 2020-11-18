@@ -13,14 +13,12 @@ export default function Categories() {
       });
   }, []);
 
-  console.log(categories);
-
   return (
     <>
       {categories &&
-        categories.map((category) => {
+        categories.map((category, index) => {
           return (
-            <p>
+            <p key={index}>
               <Link
                 style={{
                   textDecoration: "none",

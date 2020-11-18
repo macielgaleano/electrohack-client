@@ -7,7 +7,6 @@ import Nav from "../Nav/Nav";
 
 export default function Brands() {
   const [brands, setBrands] = useState([]);
-  const [notRepitedBrands, setNotRepitedBrands] = useState([]);
   useEffect(() => {
     fetch(`https://electrohack-server.vercel.app/productos/${brands}`)
       .then((data) => data.json())
@@ -31,10 +30,9 @@ export default function Brands() {
   }
 
   brands_aux = removeDups(brands_aux);
-  console.log(brands_aux);
 
   return (
-    <>
+    <div>
       <Nav />
 
       {brands_aux &&
@@ -53,6 +51,6 @@ export default function Brands() {
             </p>
           );
         })}
-    </>
+    </div>
   );
 }
