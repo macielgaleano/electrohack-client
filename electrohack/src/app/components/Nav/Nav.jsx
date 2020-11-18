@@ -80,8 +80,7 @@ export default function Nav(props) {
       onClose={handleMenuClose}
     >
       <h5 className="text-center pt-2 mb-3">
-        {useSelector((state) => state.user.token) &&
-          user.user.firstname + " " + user.user.lastname}
+        {!isEmpty(user) && user.user.firstname + " " + user.user.lastname}
       </h5>
       <MenuItem>
         {!useSelector((state) => state.user.token) && (
