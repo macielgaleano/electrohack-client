@@ -25,70 +25,64 @@ function App() {
             exact
             path="/login"
             component={Login}
-          ></PublicRoute>
+          />
           <PrivateRoute
             restricted={false}
             exact
             path="/usuarios/cuenta"
             component={EditPage}
-          ></PrivateRoute>
+          />
           <PublicRoute
             restricted={false}
             exact
             path="/carrito"
             component={CartPage}
-          ></PublicRoute>
+          />
 
           <PublicRoute
             restricted={false}
             exact
             path="/registro"
             component={Register}
-          ></PublicRoute>
+          />
           <PublicRoute
             restricted={false}
             exact
             path="/productos/categorias"
             component={CategoryPage}
-          ></PublicRoute>
-          <PublicRoute
-            restricted={false}
-            exact
-            path="/"
-            component={Home}
-          ></PublicRoute>
+          />
+          <PublicRoute restricted={false} exact path="/" component={Home} />
           <PublicRoute
             restricted={false}
             exact
             path="/productos/marcas"
             component={BrandsPage}
-          ></PublicRoute>
+          />
           <PublicRoute
             restricted={false}
             exact
             path="/productos/marcas/:brand"
             component={OneBrandPage}
-          ></PublicRoute>
+          />
           <PublicRoute
             restricted={false}
             exact
             path="/productos/categorias/:category"
             component={OneCategoryPage}
-          ></PublicRoute>
+          />
           <PublicRoute
             restricted={false}
             exact
             path="/productos/:slug"
             component={OneProductPage}
-          ></PublicRoute>
-          {
-            <PrivateRoute
-              restricted={true}
-              exact
-              path="/ordenes"
-              component={UserOrders}
-            ></PrivateRoute>
-          }
+          />
+
+          <PrivateRoute
+            restricted={true}
+            exact
+            path="/ordenes"
+            component={UserOrders}
+          />
         </Switch>
       </div>
     </Router>
