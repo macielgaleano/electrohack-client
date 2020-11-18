@@ -12,4 +12,10 @@ function decrement(value) {
   };
 }
 
-export { increment, decrement };
+function restartTotal() {
+  return {
+    type: "RESTART_TOTAL",
+  };
+}
+
+export { increment, decrement, restartTotal };

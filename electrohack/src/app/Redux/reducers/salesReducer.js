@@ -7,6 +7,9 @@ function salesReducer(state = 0, action) {
     case "DECREMENT":
       return state - action.payload;
 
+    case "RESTART_TOTAL":
+      return 0;
+
     default:
       return state;
   }

@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./CartPage.css";
 import axios from "axios";
 import { restartCart } from "../../Redux/actions/actionsCart";
+import { restartTotal } from "../../Redux/actions/actionsSales";
 
 export default function Cart() {
   const token = useSelector((state) => state.user.token);
@@ -80,6 +81,7 @@ export default function Cart() {
             onClick={() => {
               sendOrder(cart, user.id);
               dispatch(restartCart([]));
+              dispatch(restartTotal());
             }}
             className="btn btn-info active"
             style={{ width: "100%" }}
