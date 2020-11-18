@@ -15,11 +15,12 @@ export default function Cart() {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  async function sendOrder(order) {
+  async function sendOrder(order, total) {
     let sendedOrder = await axios.post(
       "https://electrohack-server.vercel.app/api/pedidos",
       {
         products: order,
+        total: total,
       },
       {
         headers: {
