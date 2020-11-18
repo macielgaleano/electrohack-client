@@ -57,15 +57,17 @@ const FixedCart = () => {
                 className="btn btn-danger active border-rounded mb-2"
                 style={{ width: "100%" }}
               >
-                <Link
-                  style={{ textDecoration: "none", color: "white" }}
-                  to="/carrito"
-                >
+                <Link style={{ textDecoration: "none", color: "white" }} to="/carrito">
                   Carrito
                 </Link>
               </button>
-              <button className="btn btn-info active" style={{ width: "100%" }}>
-                Pagar
+              <button
+                className="btn btn-info active border-rounded mb-2"
+                style={{ width: "100%" }}
+              >
+                <Link style={{ textDecoration: "none", color: "white" }} to="/carrito">
+                  Pagar
+                </Link>
               </button>
             </div>
           </div>
