@@ -34,6 +34,14 @@ export default function Nav(props) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  function isEmpty(obj) {
+    for (var prop in obj) {
+      if (obj.hasOwnProperty(prop)) return false;
+    }
+
+    return true;
+  }
+
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -262,7 +270,7 @@ export default function Nav(props) {
             </div>
             <div className="ml-2">
               <Typography className={classes.title} variant="subtitle1" noWrap>
-                {user && user.user.firstname + " " + user.user.lastname}
+                {!isEmpty(user) && user.user.firstname + " " + user.user.lastname}
               </Typography>
             </div>
           </Toolbar>
