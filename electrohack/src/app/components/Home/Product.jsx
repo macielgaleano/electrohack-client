@@ -30,7 +30,7 @@ export default function Product({ item }) {
           <div className="d-flex flex-column ">
             <Link to={`/productos/${item.slug}`}>
               <h4 className="lead text-dark name">
-                {item.name.length > 40 ? item.name.slice(0, 40) + "..." : item.name}
+                {item.name.length > 40 ? item.name.slice(0, 30) + "..." : item.name}
               </h4>
             </Link>
           </div>

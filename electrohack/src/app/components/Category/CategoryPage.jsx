@@ -11,7 +11,7 @@ export default function CategoryPage() {
       {/* <FixedCart></FixedCart> */}
       <div className="container mt-5 pt-5">
         <div className="row" style={{ paddingBottom: "400px" }}>
-          <div className="col-md-5">
+          <div className="col-md-5 d-flex flex-column justify-content-center mb-4 alig-items-center">
             <Categories />
           </div>
           <div className="col-md-7">

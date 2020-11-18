@@ -10,6 +10,7 @@ export default function Categories() {
       .get("https://electrohack-server.vercel.app/productos/lista/categorias")
       .then((res) => {
         setCategories(res.data);
+        console.log(res.data);
       });
   }, []);
 
