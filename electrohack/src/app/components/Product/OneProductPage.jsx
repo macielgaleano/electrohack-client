@@ -12,6 +12,16 @@ import { Link } from "react-router-dom";
 import FixedCart from "../../components/Home/FixedCart";
 import { increment } from "../../Redux/actions/actionsSales";
 import Carousel from "react-bootstrap/Carousel";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 const OneProduct = () => {
   const dispatch = useDispatch();
@@ -62,14 +72,19 @@ const OneProduct = () => {
                           <strong>Precio:</strong> ${product.price}
                         </p>
                         <div>
-                          <ShoppingCartIcon
-                            key={index}
-                            style={{ color: green[500], fontSize: "40px" }}
+                          <Button
                             onClick={() => {
                               dispatch(addProduct(product));
                               dispatch(increment(product.price));
                             }}
-                          ></ShoppingCartIcon>
+                            variant="contained"
+                            color="secondary"
+                          >
+                            Comprar
+                            <ShoppingCartIcon
+                              style={{ color: green[5000], fontSize: "17px" }}
+                            />
+                          </Button>
                         </div>
                       </div>
                       <h1 className="col-12 mt-5">Fotos del producto </h1>

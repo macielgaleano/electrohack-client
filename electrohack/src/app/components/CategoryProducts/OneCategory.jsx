@@ -7,6 +7,16 @@ import { useDispatch } from "react-redux";
 import { addProduct } from "../../Redux/actions/actionsCart";
 import { increment } from "../../Redux/actions/actionsSales";
 import FixedCart from "../Home/FixedCart";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 export default function OneCategory({ category }) {
   const dispatch = useDispatch();
@@ -34,13 +44,19 @@ export default function OneCategory({ category }) {
             <div className="d-flex flex-column justify-content-end align-items-end">
               <p className="price text-dark ml-3"> ${category.price}</p>
               <div>
-                <ShoppingCartIcon
-                  style={{ color: green[500], fontSize: "40px" }}
+                <Button
                   onClick={() => {
                     dispatch(addProduct(category));
                     dispatch(increment(category.price));
                   }}
-                ></ShoppingCartIcon>
+                  variant="contained"
+                  color="secondary"
+                >
+                  Comprar
+                  <ShoppingCartIcon
+                    style={{ color: green[5000], fontSize: "17px" }}
+                  />
+                </Button>
               </div>
             </div>
           </div>
