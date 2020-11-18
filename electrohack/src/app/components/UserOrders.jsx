@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import "./Order.css";
 // import { Link } from "react-router-dom";
 import Nav from "./Nav/Nav";
 
@@ -11,7 +12,7 @@ export default function UserOrders() {
     store.user.token &&
       fetch(`https://electrohack-server.vercel.app/api/pedidos`, {
         headers: {
-          "Content-Type": "application/json",
+          "Contengitt-Type": "application/json",
           Authorization: `Bearer ${store.user.token}`,
         },
       })
@@ -28,27 +29,25 @@ export default function UserOrders() {
       <Nav />
 
       <div className="container">
-        <h2 className="text-center">Mis órdenes</h2>
-        <p className="mt-3 pt-3">
-          <strong>Nombre:</strong> {store.user.user.firstname}{" "}
-          {store.user.user.lastname}
-        </p>
+        <h2 className="text-center mb-3">Mis órdenes</h2>
 
         {orders.map((order) => {
           return (
-            <div>
+            <div className="box">
               {order.products.map((product) => {
                 console.log("multip", product.quantity * product.price);
                 return (
                   <p>
-                    <strong>Producto:</strong> {product.name}
+                    <strong>Artículo:</strong> {product.name} -{" "}
                     <strong>Cantidad:</strong> {product.quantity}
                   </p>
                 );
               })}
-              <p>
-                <strong>TOTAL:</strong> {}
-              </p>
+              <div className="d-flex justify-content-end pr-3">
+                <p>
+                  <strong>TOTAL:</strong> ${Math.round(order.total)}
+                </p>
+              </div>
             </div>
           );
         })}
