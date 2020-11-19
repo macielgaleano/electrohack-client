@@ -24,13 +24,19 @@ export default function Product({ item }) {
     <div className="col-sm-6 col-12 col-md-3 ">
       <div className="card text-white mt-3 mb-4 d-flex flex-column">
         <Link to={`/productos/${item.slug}`}>
-          <img className="card-img-top img-fluid image" src={item.pictures[0]} alt="" />
+          <img
+            className="card-img-top img-fluid image imgHome"
+            src={item.pictures[0]}
+            alt=""
+          />
         </Link>
         <div className="card-body d-flex flex-column">
           <div className="d-flex flex-column ">
             <Link to={`/productos/${item.slug}`}>
               <h4 className="lead text-dark name">
-                {item.name.length > 40 ? item.name.slice(0, 30) + "..." : item.name}
+                {item.name.length > 40
+                  ? item.name.slice(0, 30) + "..."
+                  : item.name}
               </h4>
             </Link>
           </div>
@@ -50,7 +56,11 @@ export default function Product({ item }) {
               >
                 Comprar
                 <ShoppingCartIcon
-                  style={{ color: green[5000], fontSize: "18px", marginRight: "5px" }}
+                  style={{
+                    color: green[5000],
+                    fontSize: "18px",
+                    marginRight: "5px",
+                  }}
                 />
               </Button>
             </div>

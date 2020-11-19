@@ -46,3 +46,11 @@ body {
 .subtitle span {
   color: #f50057;
 }
+
+.imgHome {
+  object-fit: contain;
+}
+
+.imgCarousel {
+  object-fit: cover;
+}

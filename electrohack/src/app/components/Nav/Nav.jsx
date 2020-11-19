@@ -188,7 +188,11 @@ export default function Nav(props) {
   return (
     <div>
       <div className={classes.nav}>
-        <AppBar position="fixed" className={classes.nav} id="back-to-top-anchor">
+        <AppBar
+          position="fixed"
+          className={classes.nav}
+          id="back-to-top-anchor"
+        >
           <Toolbar>
             <Link to="/" className="text-white">
               <Typography className={classes.title} variant="h5" noWrap>
@@ -269,7 +273,8 @@ export default function Nav(props) {
             </div>
             <div className="ml-2 username-nav">
               <Typography className={classes.title} variant="subtitle1" noWrap>
-                {!isEmpty(user) && user.user.firstname + " " + user.user.lastname}
+                {!isEmpty(user) &&
+                  user.user.firstname + " " + user.user.lastname}
               </Typography>
             </div>
           </Toolbar>

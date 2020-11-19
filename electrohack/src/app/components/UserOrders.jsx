@@ -43,10 +43,20 @@ export default function UserOrders() {
                   </p>
                 );
               })}
-              <div className="d-flex justify-content-end pr-3">
-                <p>
-                  <strong>TOTAL:</strong> ${Math.round(order.total)}
-                </p>
+              <div className="row">
+                <div className="col-md-6">
+                  <p>
+                    <strong>Estado de la orden: </strong>
+                    {order.state}
+                  </p>
+                </div>
+                <div className="col-md-6">
+                  <div className="d-flex justify-content-end pr-3">
+                    <p>
+                      <strong>TOTAL:</strong> ${Math.round(order.total)}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           );
