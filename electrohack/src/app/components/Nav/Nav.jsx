@@ -92,6 +92,7 @@ export default function Nav(props) {
             Iniciar sesion
           </Link>
         )}
+        x
       </MenuItem>
       <MenuItem>
         {useSelector((state) => state.user.token) && (
@@ -244,7 +245,13 @@ export default function Nav(props) {
                 color="inherit"
               >
                 <Badge color="secondary">
-                  <ListIcon />
+                  <Link
+                    to="/ordenes"
+                    className="text-white"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <ListIcon />
+                  </Link>
                 </Badge>
               </IconButton>
               <IconButton
