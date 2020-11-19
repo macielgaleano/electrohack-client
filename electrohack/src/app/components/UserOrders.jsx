@@ -12,7 +12,7 @@ export default function UserOrders() {
     store.user.token &&
       fetch(`https://electrohack-server.vercel.app/api/pedidos`, {
         headers: {
-          "Contengitt-Type": "application/json",
+          "Content-Type": "application/json",
           Authorization: `Bearer ${store.user.token}`,
         },
       })

@@ -71,7 +71,7 @@ export default function Register() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Registarse
+          Registrarse
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
