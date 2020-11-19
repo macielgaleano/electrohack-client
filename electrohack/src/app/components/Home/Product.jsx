@@ -29,8 +29,8 @@ export default function Product({ item }) {
         <div className="card-body d-flex flex-column">
           <div className="d-flex flex-column ">
             <Link to={`/productos/${item.slug}`}>
-              <h4 className="lead text-dark name">
-                {item.name.length > 40 ? item.name.slice(0, 30) + "..." : item.name}
+              <h4 className="lead text-dark name" style={{ height: "50px" }}>
+                {item.name.length > 60 ? item.name.slice(0, 60) + "..." : item.name}
               </h4>
             </Link>
           </div>
