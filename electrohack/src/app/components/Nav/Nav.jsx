@@ -92,7 +92,6 @@ export default function Nav(props) {
             Iniciar sesion
           </Link>
         )}
-        x
       </MenuItem>
       <MenuItem>
         {useSelector((state) => state.user.token) && (
