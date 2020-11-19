@@ -2,8 +2,7 @@ body {
 }
 
 .box-item {
-  background-color: rgb(230, 223, 223);
-  border: 1px solid rgb(160, 153, 153);
+  border: 1px solid rgb(204, 200, 200);
   border-radius: 10px;
   margin: 5px;
   padding: 10px;
