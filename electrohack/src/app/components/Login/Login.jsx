@@ -120,7 +120,7 @@ export default function Login() {
               </Link>
             </Grid>
           </Grid>
-          <Alert severity="error" style={{ diplay: alertStyle, marginTop: "20px" }}>
+          <Alert severity="error" style={{ display: alertStyle, marginTop: "20px" }}>
             <AlertTitle>Error</AlertTitle>
             Los datos ingresados no son correctos — <strong>Intenta nuevamente!</strong>
           </Alert>
