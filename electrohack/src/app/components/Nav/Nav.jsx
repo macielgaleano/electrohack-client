@@ -80,7 +80,9 @@ export default function Nav(props) {
       onClose={handleMenuClose}
     >
       <h5 className="text-center pt-2 mb-3">
-        {!isEmpty(user) && user.user.firstname + " " + user.user.lastname}
+        {!isEmpty(user) &&
+          user.user.firstname !== undefined &&
+          user.user.firstname + " " + user.user.lastname}
       </h5>
       <MenuItem>
         {!useSelector((state) => state.user.token) && (
@@ -269,7 +271,9 @@ export default function Nav(props) {
             </div>
             <div className="ml-2 username-nav">
               <Typography className={classes.title} variant="subtitle1" noWrap>
-                {!isEmpty(user) && user.user.firstname + " " + user.user.lastname}
+                {!isEmpty(user) &&
+                  user.user.firstname !== undefined &&
+                  user.user.firstname + " " + user.user.lastname}
               </Typography>
             </div>
           </Toolbar>
