@@ -9,15 +9,17 @@ export default function CategoryPage() {
     <>
       <Nav />
       {/* <FixedCart></FixedCart> */}
-      <div className="container mt-5 pt-5">
+      <div className="container">
+        <h2 className="text-center pb-5">Categorías</h2>
         <div className="row" style={{ paddingBottom: "400px" }}>
-          <div className="col-md-5 d-flex flex-column justify-content-center mb-4 alig-items-center">
+          <div className="col-md-6 d-flex flex-column justify-content-center mb-4 alig-items-center">
             <Categories />
           </div>
-          <div className="col-md-7">
-            <div className="box-image">
+          <div className="col-md-6">
+            <div>
               <img
-                src="https://images.unsplash.com/photo-1576602976047-174e57a47881?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+                className="box-image"
+                src="https://images.unsplash.com/photo-1580897275296-87979517bd4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
                 alt=""
               />
             </div>

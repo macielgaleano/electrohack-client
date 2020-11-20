@@ -23,8 +23,9 @@ export default function OneBrandPage() {
 
       <div className="container mt-5 pt-5">
         <h1 className="text-center">{brand}</h1>
-        <div className="row mt-5" style={{ paddingBottom: "400px" }}>
-          {brandProducts && brandProducts.map((brand) => <Product item={brand} />)}
+        <div className="row" style={{ paddingBottom: "400px" }}>
+          {brandProducts &&
+            brandProducts.map((brand) => <Product item={brand} />)}
         </div>
       </div>
     </>

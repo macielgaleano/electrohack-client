@@ -1,6 +1,8 @@
 .imgMarcas {
-  height: 600px;
-  width: 500px;
+  height: 650px;
+  width: 525px;
+  border: solid 3px black;
+  box-shadow: 10px black;
 }
 
 .bg-brands {

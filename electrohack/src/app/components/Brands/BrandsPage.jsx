@@ -6,15 +6,16 @@ export default function BrandsPage() {
   return (
     <>
       {/* <FixedCart></FixedCart> */}
-      <div className="container pt-5 mt-5">
+      <div className="container">
+        <h2 className="text-center pb-5">Marcas</h2>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-6">
             <Brands />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-6">
             <img
               className="imgMarcas"
-              src="https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+              src="https://images.unsplash.com/photo-1590795769046-b197fb723a22?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80"
               alt=""
             />
           </div>
