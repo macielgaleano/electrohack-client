@@ -171,7 +171,7 @@ export default function AboutUs() {
           </div>
         </div>
         <div className="row mx-auto">
-          <div className="col-6 mx-auto">
+          <div className="col-6">
             <h2 className="mb-4">Por venir...</h2>
             <ul className="lead mb-5">
               <li>Queremos pulir algunos bugs del dashboard</li>
