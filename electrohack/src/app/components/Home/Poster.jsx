@@ -18,9 +18,14 @@ export default function Poster() {
               className="d-flex justify-content-between"
               style={{ width: "400px" }}
             >
-              <Button className="mt-5" variant="contained" color="secondary">
+              {/* <Button
+                className="mt-5"
+                variant="contained"
+                color="secondary"
+                onClick={}
+              >
                 Seguir viendo
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
