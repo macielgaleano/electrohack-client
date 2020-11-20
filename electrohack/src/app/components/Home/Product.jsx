@@ -30,7 +30,7 @@ export default function Product({ item }) {
             alt=""
           />
         </Link>
-        <div className="card-body d-flex flex-column ">
+        <div className="card-body-home d-flex flex-column ">
           <div className="d-flex flex-column">
             <Link to={`/productos/${item.slug}`}>
               <h4 className="lead text-dark name">
