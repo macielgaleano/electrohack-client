@@ -39,12 +39,12 @@ export default function Cart() {
     return (
       <div className="mt-5 pt-5 empty-cart">
         <h2 className="d-flex justify-content-center">
-          Comienza a disfrutar de nuestras increibles ofertas
+          Comienza a disfrutar de nuestras increíbles ofertas
         </h2>
         <h2 className="mt-4 d-flex justify-content-center">
           Visita nuestra tienda
           <Link to="/" className="pl-2">
-            AQUI
+            AQUÍ
           </Link>
         </h2>
       </div>

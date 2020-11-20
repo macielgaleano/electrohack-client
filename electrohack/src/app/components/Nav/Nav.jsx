@@ -89,7 +89,7 @@ export default function Nav(props) {
           <Link to="/login" className="text-dark">
             {" "}
             <ExitToAppIcon className="mr-2" />
-            Iniciar sesion
+            Iniciar sesión
           </Link>
         )}
       </MenuItem>
@@ -98,7 +98,7 @@ export default function Nav(props) {
           <Link to="/usuarios/cuenta" className="text-dark">
             {" "}
             <SettingsIcon className="mr-2" />
-            Configuracion
+            Configuración
           </Link>
         )}
       </MenuItem>
@@ -106,7 +106,7 @@ export default function Nav(props) {
         {useSelector((state) => state.user.token) && (
           <Link to="/ordenes" className="text-dark">
             <AccountBalanceWalletIcon className="mr-2" />
-            Ordenes
+            Órdenes
           </Link>
         )}
       </MenuItem>
@@ -114,7 +114,7 @@ export default function Nav(props) {
         <Link to="/carrito" className="text-dark">
           {" "}
           <ShoppingCartIcon className="mr-2" />
-          Carro de compra
+          Carro de compras
         </Link>
       </MenuItem>
       <MenuItem>
@@ -122,7 +122,7 @@ export default function Nav(props) {
           <Link to="/" onClick={loggout} className="text-dark">
             {" "}
             <ExitToAppIcon className="mr-2" />
-            Cerrar sesion
+            Cerrar sesión
           </Link>
         )}
       </MenuItem>
@@ -143,7 +143,7 @@ export default function Nav(props) {
       {!useSelector((state) => state.user.token) && (
         <MenuItem>
           <p>
-            <Link to="/login">Iniciar sesion</Link>
+            <Link to="/login">Iniciar sesión</Link>
           </p>
         </MenuItem>
       )}
@@ -151,7 +151,7 @@ export default function Nav(props) {
         <p>
           {" "}
           <Link to="/carrito" className="text-dark">
-            Carrito de compras
+            Carro de compras
           </Link>
         </p>
       </MenuItem>
@@ -161,7 +161,7 @@ export default function Nav(props) {
             <p>
               {" "}
               <Link className="text-dark" to="/ordenes">
-                Ordenes
+                Órdenes
               </Link>
             </p>
           </MenuItem>
@@ -170,7 +170,7 @@ export default function Nav(props) {
             <p>
               {" "}
               <Link className="text-dark" to="/usuarios/cuenta">
-                Configuration
+                Configuración
               </Link>
             </p>
           </MenuItem>
@@ -178,7 +178,7 @@ export default function Nav(props) {
             <p>
               {" "}
               <Link className="text-dark" onClick={loggout} to="/">
-                Cerrar sesion
+                Cerrar sesión
               </Link>
             </p>
           </MenuItem>
@@ -217,7 +217,7 @@ export default function Nav(props) {
             </div>
             <Link to="/productos/categorias" className="text-white mr-1">
               <Typography className={classes.title} variant="subtitle1" noWrap>
-                Categorias /
+                Categorías /
               </Typography>
             </Link>
             <Link to="/productos/marcas" className="text-white mr-4">
