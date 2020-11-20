@@ -57,3 +57,11 @@ body {
 .imgCarousel {
   object-fit: cover;
 }
+
+.card-body {
+  height: 200px;
+}
+
+h4 {
+  height: 38px;
+}

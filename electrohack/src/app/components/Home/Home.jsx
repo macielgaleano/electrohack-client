@@ -19,7 +19,7 @@ const Home = (props) => {
       {/* <FixedCart></FixedCart> */}
       <ListOfStading className="destacados"></ListOfStading>
       <ListOfProducts></ListOfProducts>
-      <ScrollTop {...props}>
+      {/* <ScrollTop {...props}>
         <Fab
           color="primary"
           style={{ background: "#1D4E89" }}
@@ -28,7 +28,7 @@ const Home = (props) => {
         >
           <KeyboardArrowUpIcon style={{ background: "#1D4E89", color: "white" }} />
         </Fab>
-      </ScrollTop>
+      </ScrollTop> */}
     </div>
   );
 };
