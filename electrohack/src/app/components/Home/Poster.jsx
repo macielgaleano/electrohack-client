@@ -11,10 +11,13 @@ export default function Poster() {
           <div className="col-12 mx-auto">
             <h1 className="text-white">ELECTROHACK</h1>
             <h2 className="text-white subtitle">
-              La mejor calidadad del mercado,{" "}
+              La mejor calidad del mercado,{" "}
               <span>los productos que estabas buscando.</span>
             </h2>
-            <div className="d-flex justify-content-between" style={{ width: "400px" }}>
+            <div
+              className="d-flex justify-content-between"
+              style={{ width: "400px" }}
+            >
               <Button className="mt-5" variant="contained" color="secondary">
                 Seguir viendo
               </Button>
