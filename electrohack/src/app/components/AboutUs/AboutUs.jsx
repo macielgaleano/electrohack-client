@@ -62,10 +62,11 @@ export default function AboutUs() {
                 <h3 className="pb-4 pt-5 mt-5 text-white">Cliente</h3>
                 <p className="lead text-white">
                   Aplicacion que ve el cliente
-                  <ul className="mt-4">
+                  <ul className="mt-4" style={{}}>
                     <li>Registrarse</li>
                     <li>Iniciar sesion</li>
                   </ul>
+                  <button className="btn btn-primary">Reiniciar datos</button>
                 </p>
               </div>
               <div className="col-8 border-rounded" style={{ marginTop: "100px" }}>
@@ -83,6 +84,7 @@ export default function AboutUs() {
                     <li>Password: 1234</li>
                   </ul>
                 </p>
+                <button className="btn btn-primary">Reiniciar datos</button>
               </div>
             </div>
           </div>
@@ -111,7 +113,7 @@ export default function AboutUs() {
               />
               <div className="card-body">
                 <h5 className="card-title">Sebastián César</h5>
-                <p className="card-text">
+                <p className="card-text" style={{ height: "200px" }}>
                   Personalmente fue mi primer experiencia en un proyecto completo pasando
                   por Back-End, Front-End y base de datos.
                   <br />
@@ -134,8 +136,12 @@ export default function AboutUs() {
               />
               <div className="card-body">
                 <h5 className="card-title">Maciel Galeano</h5>
-                <p className="card-text">
-                  Hola soy Maciel Gallardo y estas viendo Disnay Channel fiu fiu...
+                <p className="card-text" style={{ height: "200px" }}>
+                  Para mi fue toda una aventura este proyecto, desde mi punto de vista los
+                  tres formamos un equipo increible, la forma de trabajo fue lo mejor.
+                  Espero seguir perfeccionado con estas dos grandes personas.
+                  https://www.linkedin.com/in/maciel-galeano-22665a194/
+                  https://github.com/macielgaleano
                 </p>
                 <a href="#" className="btn btn-primary">
                   Go somewhere
@@ -153,7 +159,7 @@ export default function AboutUs() {
               />
               <div className="card-body">
                 <h5 className="card-title">Martin Magnone</h5>
-                <p className="card-text">
+                <p className="card-text" style={{ height: "200px" }}>
                   Some quick example text to build on the card title and make up the bulk
                   of the card's content.
                 </p>
@@ -164,16 +170,15 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-6">
+        <div className="row mx-auto">
+          <div className="col-6 mx-auto">
             <h2 className="mb-4">Por venir...</h2>
-            <ul>
+            <ul className="lead mb-5">
               <li>Queremos pulir algunos bugs del dashboard</li>
               <li>Trabajaremos aún más la estética del sitio</li>
               <li>Integraremos MercadoPago y PayPal</li>
             </ul>
           </div>
-          <div className="col-6"></div>
         </div>
       </div>
     </div>
