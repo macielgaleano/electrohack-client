@@ -8,41 +8,20 @@ export default function AboutUs() {
       <Nav />
       <div className="container">
         <div className="row ">
-          <div className="col-6">
+          <div className="col-7">
             <h2 className="pb-5 pt-5">Presentación del proyecto</h2>
             <p>
               ELECTROHACK es un e-commerce que realizamos como proyecto final
-              del coding bootcamp de Hack-Academy.
+              del coding bootcamp de Hack-Academy. Para la parte del Back-End y
+              base de datos utilizamos las siguientes tecnologías:
             </p>
-            <p>
-              Para la parte del Back-End y base de datos utilizamos las
-              siguientes tecnologías:
-            </p>
-            <ul>
-              <li>Node</li>
-              <li>Express</li>
-              <li>Amazon Web Service SDK</li>
-              <li>JWT</li>
-              <li>Mongoose</li>
-              <li>MongoDB (Atlas)</li>
-            </ul>
-
-            <h6>Para el cliente : </h6>
-            <ul>
-              <li>ReactJS</li>
-              <li>Material UI</li>
-              <li>Redux</li>
-              <li>Persist</li>
-            </ul>
-            <h6>Para el dashboard: </h6>
-            <ul>
-              <li>Utilizamos un template hecho en react-bootstrap</li>
-            </ul>
           </div>
-          <div className="col-6"></div>
+          <div className="col-5 border-rounded" style={{ marginTop: "140px" }}>
+            <img src={window.location.origin + "/mobile.PNG"} />
+          </div>
         </div>
         <div className="row ">
-          <div className="col-12">
+          <div className="col-9">
             <h2 className="mb-4">Quienes Somos</h2>
             <p>
               Somos un grupo de 3 Desarrolladores Web Jr. que nos encontramos

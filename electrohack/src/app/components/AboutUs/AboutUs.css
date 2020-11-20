@@ -1,4 +1,9 @@
 .about-body {
   color: white;
-  background-color: rgb(11, 14, 31);
+  background-color: rgb(45, 47, 58);
+}
+
+.about-body h2 {
+  color: white;
+  text-shadow: none;
 }
