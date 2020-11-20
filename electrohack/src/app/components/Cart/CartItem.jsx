@@ -14,10 +14,10 @@ export default function CartItem({ item }) {
     return <></>;
   } else {
     return (
-      <div className="box-item mt-4">
+      <div className="item-box mt-4">
         <div className="row">
           <div className="col-lg-2">
-            <div className="box-image m-3">
+            <div className="image-box m-3">
               <img className="img-fluid" src={item.pictures[0]} alt="FOTO" />
             </div>
           </div>
