@@ -292,6 +292,20 @@ export default function Nav(props) {
         {renderMobileMenu}
         {renderMenu}
       </div>
+      <Link
+        to="/sobre-nosotros"
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          left: "10px",
+          backgroundColor: "#1d4e89",
+          color: "white",
+          padding: "5px 8px",
+          borderRadius: "5px",
+        }}
+      >
+        Sobre Nosotros
+      </Link>
     </div>
   );
 }
