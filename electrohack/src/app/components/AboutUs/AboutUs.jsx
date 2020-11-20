@@ -12,31 +12,46 @@ export default function AboutUs() {
         <div className="container ">
           <div className="row d-flex align-items-center">
             <div className="col-8">
-              <h1 className="pb-4 pt-5 mt-5 text-white">Presentación del proyecto</h1>
+              <h1 className="pb-4 pt-5 mt-5 text-white">
+                Presentación del proyecto
+              </h1>
               <p className="lead text-white">
-                ELECTROHACK es un e-commerce que realizamos como proyecto final del coding
-                bootcamp de Hack-Academy. Para la parte del Back-End y base de datos
-                utilizamos las siguientes tecnologías:
+                ELECTROHACK es un e-commerce que realizamos como proyecto final
+                del coding bootcamp de Hack-Academy. Para la parte del Back-End
+                y base de datos utilizamos las siguientes tecnologías:
               </p>
               <div className="row mt-5 ">
                 <div className="col-11 mx-auto ">
                   <div className="row ">
-                    <div className="col-3 mr-3 alert bg-primary text-center">React</div>
+                    <div className="col-3 mr-3 alert bg-primary text-center">
+                      React
+                    </div>
                     <div className="col-2 mr-3 alert text-dark bg-warning text-center">
                       Express
                     </div>
-                    <div className="col-3 mr-3 alert bg-success text-center">Node</div>
-                    <div className="col-4 mr-3 alert bg-danger text-center">Redux</div>
-                    <div className="col-3 mr-3 alert bg-primary text-center">MongoDB</div>
+                    <div className="col-3 mr-3 alert bg-success text-center">
+                      Node
+                    </div>
+                    <div className="col-4 mr-3 alert bg-danger text-center">
+                      Redux
+                    </div>
+                    <div className="col-3 mr-3 alert bg-primary text-center">
+                      MongoDB
+                    </div>
                     <div className="col-3 mr-3 alert bg-success text-center">
                       Mongoose
                     </div>
-                    <div className="col-2 mr-3 alert bg-dark text-center">Persist</div>
+                    <div className="col-2 mr-3 alert bg-dark text-center">
+                      Persist
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-4 border-rounded" style={{ marginTop: "100px" }}>
+            <div
+              className="col-4 border-rounded"
+              style={{ marginTop: "100px" }}
+            >
               <img
                 src={window.location.origin + "/mobile.PNG"}
                 style={{ borderRadius: "20px" }}
@@ -52,7 +67,10 @@ export default function AboutUs() {
               <h1 className="pb-2 pt-5 mt-5 text-white">
                 Como ingresar a nuestras aplicaciones:
               </h1>
-              <div className="col-8 border-rounded" style={{ marginTop: "100px" }}>
+              <div
+                className="col-8 border-rounded"
+                style={{ marginTop: "100px" }}
+              >
                 <img
                   src={window.location.origin + "/Home2.PNG"}
                   style={{ borderRadius: "20px" }}
@@ -61,15 +79,18 @@ export default function AboutUs() {
               <div className="col-4 d-flex align-items-center justify-content-center flex-column">
                 <h3 className="pb-4 pt-5 mt-5 text-white">Cliente</h3>
                 <p className="lead text-white">
-                  Aplicacion que ve el cliente
+                  Aplicación que ve el cliente
                   <ul className="mt-4" style={{}}>
                     <li>Registrarse</li>
-                    <li>Iniciar sesion</li>
+                    <li>Iniciar sesión</li>
                   </ul>
                   <button className="btn btn-primary">Reiniciar datos</button>
                 </p>
               </div>
-              <div className="col-8 border-rounded" style={{ marginTop: "100px" }}>
+              <div
+                className="col-8 border-rounded"
+                style={{ marginTop: "100px" }}
+              >
                 <img
                   src={window.location.origin + "/dashboard.png"}
                   style={{ borderRadius: "20px" }}
@@ -78,7 +99,7 @@ export default function AboutUs() {
               <div className="col-4 d-flex align-items-center justify-content-center flex-column">
                 <h3 className="pb-4 pt-5 mt-5 text-white">Dashboard</h3>
                 <p className="lead text-white">
-                  Aplicacion que ven los administradores
+                  Aplicación que ven los administradores
                   <ul className="mt-4">
                     <li>Admin: root@gmail.com</li>
                     <li>Password: 1234</li>
@@ -96,11 +117,12 @@ export default function AboutUs() {
           <div className="colfa-rotate-90 mx-auto text-center">
             <h2 className="mb-5">Quienes Somos</h2>
             <p className="lead pb-5">
-              Somos un grupo de 3 Desarrolladores Web Jr. que nos encontramos trabajando
-              en este proyecto con el fin de que el mismo pueda ser testeado por nuestros
-              futuros entrevistadores y utilizarlo como vidriera.
-              <br></br> En un tiempo de algo mas de 2 semanas obtuvimos este producto con
-              el cual estamos conformes pero seguiremos actualizando los próximos días.
+              Somos un grupo de 3 Desarrolladores Web Jr. que nos encontramos
+              trabajando en este proyecto con el fin de que el mismo pueda ser
+              testeado por nuestros futuros entrevistadores y utilizarlo como
+              vidriera.
+              <br></br> En 2 semanas obtuvimos este producto con el cual estamos
+              conformes, aunque lo continuaremos actualizando los próximos días.
             </p>
           </div>
           <div className="col-4">
@@ -114,11 +136,11 @@ export default function AboutUs() {
               <div className="card-body">
                 <h5 className="card-title">Sebastián César</h5>
                 <p className="card-text" style={{ height: "200px" }}>
-                  Personalmente fue mi primer experiencia en un proyecto completo pasando
-                  por Back-End, Front-End y base de datos.
+                  Personalmente fue mi primer experiencia en un proyecto
+                  completo pasando por Back-End, Front-End y base de datos.
                   <br />
-                  Quedé muy conforme y con muchas ganas de perfeccionar y pulir muchas
-                  cosas en futuros proyectos
+                  Quedé muy conforme y con muchas ganas de perfeccionar y pulir
+                  muchas cosas en futuros proyectos
                 </p>
                 <a href="https://www.linkedin.com/in/sebastian-cesar">
                   Visitame en LinkedIn
@@ -137,14 +159,13 @@ export default function AboutUs() {
               <div className="card-body">
                 <h5 className="card-title">Maciel Galeano</h5>
                 <p className="card-text" style={{ height: "200px" }}>
-                  Para mi fue toda una aventura este proyecto, desde mi punto de vista los
-                  tres formamos un equipo increible, la forma de trabajo fue lo mejor.
-                  Espero seguir perfeccionado con estas dos grandes personas.
-                  https://www.linkedin.com/in/maciel-galeano-22665a194/
-                  https://github.com/macielgaleano
+                  Para mi fue toda una aventura este proyecto, desde mi punto de
+                  vista los tres formamos un equipo increible, la forma de
+                  trabajo fue lo mejor. Espero seguir perfeccionado con estas
+                  dos grandes personas. https://github.com/macielgaleano
                 </p>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
+                <a href="https://www.linkedin.com/in/maciel-galeano-22665a194/">
+                  Visitame en LinkedIn
                 </a>
               </div>
             </div>
@@ -152,19 +173,21 @@ export default function AboutUs() {
           <div className="col-4">
             <div className="card text-dark" style={{ width: "18rem" }}>
               <img
-                src="..."
+                src="https://media-exp1.licdn.com/dms/image/C4E03AQHFpmI1HuUHTw/profile-displayphoto-shrink_200_200/0/1605801494715?e=1611187200&v=beta&t=m4lsaqpS4BDdZhRa_GWujopHGnoA5Us5cr0HbZpsfrg"
                 className="card-img-top"
                 alt="..."
                 style={{ height: "300px" }}
               />
               <div className="card-body">
-                <h5 className="card-title">Martin Magnone</h5>
+                <h5 className="card-title">Martín Magnone</h5>
                 <p className="card-text" style={{ height: "200px" }}>
-                  Some quick example text to build on the card title and make up the bulk
-                  of the card's content.
+                  Este es el primer proyecto grande en el que trabajo. Fue una
+                  experiencia buenísima. Formamos un gran equipo y nos
+                  complementamos de una gran manera. Estoy muy contento con el
+                  trabajo realizado hasta el momento.
                 </p>
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
+                <a href="https://www.linkedin.com/in/martin-magnone">
+                  Visitame en LinkedIn
                 </a>
               </div>
             </div>
