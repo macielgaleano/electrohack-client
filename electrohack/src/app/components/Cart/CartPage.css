@@ -5,23 +5,13 @@ body {
   border: 1px solid rgb(204, 200, 200);
   border-radius: 10px;
   margin: 5px;
-  padding: 10px;
+  padding: 25px;
 }
 
 h2 {
   margin-top: 100px;
   color: rgb(0, 0, 0);
   text-shadow: 5px 5px 10px rgb(131, 126, 126);
-}
-
-.pay-box {
-  position: fixed;
-  top: 100px;
-  right: 100px;
-  background-color: rgb(230, 223, 223);
-  border: 1px solid rgb(160, 153, 153);
-  border-radius: 10px;
-  padding: 30px;
 }
 
 .btn-pay {
