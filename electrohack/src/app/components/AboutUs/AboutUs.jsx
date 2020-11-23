@@ -11,37 +11,40 @@ export default function AboutUs() {
       <div className="poster-bg m-0 p-0 " style={{ height: "700px" }}>
         <div className="container ">
           <div className="row d-flex align-items-center">
-            <div className="col-8">
+            <div className="col-md-8">
               <h1 className="pb-4 pt-5 mt-5 text-white">
                 Presentación del proyecto
               </h1>
               <p className="lead text-white">
-                ELECTROHACK es un e-commerce que realizamos como proyecto final
-                del coding bootcamp de Hack-Academy. Para la parte del Back-End
-                y base de datos utilizamos las siguientes tecnologías:
+                ElectroHack es un e-commerce que desarrollamos como proyecto
+                final del Coding Bootcamp en Hack-Academy, en los 3 meses de
+                duración del curso utilizamos muchas tecnologías.
               </p>
-              <div className="row mt-5 ">
-                <div className="col-11 mx-auto ">
+              <p className="lead text-white">
+                Para este proyecto utilizamos las <strong>siguientes:</strong>
+              </p>
+              <div className="row mt-2 ">
+                <div className="col-12 mx-auto ">
                   <div className="row ">
-                    <div className="col-3 mr-3 alert bg-primary text-center">
+                    <div className="col-md-3 mr-3 alert bg-primary text-center">
                       React
                     </div>
-                    <div className="col-2 mr-3 alert text-dark bg-warning text-center">
+                    <div className="col-md-2 mr-3 alert text-dark bg-warning text-center">
                       Express
                     </div>
-                    <div className="col-3 mr-3 alert bg-success text-center">
+                    <div className="col-md-3 mr-3 alert bg-success text-center">
                       Node
                     </div>
-                    <div className="col-4 mr-3 alert bg-danger text-center">
+                    <div className="col-md-4 mr-3 alert bg-danger text-center">
                       Redux
                     </div>
-                    <div className="col-3 mr-3 alert bg-primary text-center">
+                    <div className="col-md-3 mr-3 alert bg-primary text-center">
                       MongoDB
                     </div>
-                    <div className="col-3 mr-3 alert bg-success text-center">
+                    <div className="col-md-3 mr-3 alert bg-success text-center">
                       Mongoose
                     </div>
-                    <div className="col-2 mr-3 alert bg-dark text-center">
+                    <div className="col-md-2 mr-3 alert bg-dark text-center">
                       Persist
                     </div>
                   </div>
@@ -49,7 +52,7 @@ export default function AboutUs() {
               </div>
             </div>
             <div
-              className="col-4 border-rounded"
+              className="col-md-4 border-rounded"
               style={{ marginTop: "100px" }}
             >
               <img
@@ -62,13 +65,13 @@ export default function AboutUs() {
       </div>
       <div className="container">
         <div className="row ">
-          <div className="col-12 mx-auto text-center">
+          <div className="col-md-12 mx-auto text-center">
             <div className="row">
               <h1 className="pb-2 pt-5 mt-5 text-white">
                 Como ingresar a nuestras aplicaciones:
               </h1>
               <div
-                className="col-8 border-rounded"
+                className="col-md-8 border-rounded"
                 style={{ marginTop: "100px" }}
               >
                 <img
@@ -76,7 +79,7 @@ export default function AboutUs() {
                   style={{ borderRadius: "20px" }}
                 />
               </div>
-              <div className="col-4 d-flex align-items-center justify-content-center flex-column">
+              <div className="col-md-4 d-flex align-items-center justify-content-center flex-column">
                 <h3 className="pb-4 pt-5 mt-5 text-white">Cliente</h3>
                 <p className="lead text-white">
                   Aplicación que ve el cliente
@@ -88,7 +91,7 @@ export default function AboutUs() {
                 </p>
               </div>
               <div
-                className="col-8 border-rounded"
+                className="col-md-8 border-rounded"
                 style={{ marginTop: "100px" }}
               >
                 <img
@@ -96,7 +99,7 @@ export default function AboutUs() {
                   style={{ borderRadius: "20px" }}
                 />
               </div>
-              <div className="col-4 d-flex align-items-center justify-content-center flex-column">
+              <div className="col-md-4 d-flex align-items-center justify-content-center flex-column">
                 <h3 className="pb-4 pt-5 mt-5 text-white">Dashboard</h3>
                 <p className="lead text-white">
                   Aplicación que ven los administradores
@@ -125,7 +128,7 @@ export default function AboutUs() {
               conformes, aunque lo continuaremos actualizando los próximos días.
             </p>
           </div>
-          <div className="col-4">
+          <div className="col-md-4">
             <div className="card text-dark" style={{ width: "18rem" }}>
               <img
                 style={{ height: "300px" }}
