@@ -54,16 +54,16 @@ export default function Cart() {
       <>
         <div className="container mt-5 pt-5">
           <div className="row">
-            <div className="col-lg-8 d-flex justify-content-center align-items-center">
+            <div className="col-lg-8 d-none d-lg-flex justify-content-center align-items-center">
               Producto
             </div>
-            <div className="col-lg-2 d-flex justify-content-center align-items-center">
+            <div className="col-lg-2 d-none d-lg-flex justify-content-center align-items-center">
               Cantidad
             </div>
-            <div className="col-lg-1 d-flex justify-content-center align-items-center">
+            <div className="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
               Precio unitario
             </div>
-            <div className="col-lg-1 d-flex justify-content-center align-items-center">
+            <div className="col-lg-1 d-none d-lg-flex justify-content-center align-items-center">
               Precio total
             </div>
           </div>
