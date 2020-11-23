@@ -190,7 +190,11 @@ export default function Nav(props) {
   return (
     <div>
       <div className={classes.nav}>
-        <AppBar position="fixed" className={classes.nav} id="back-to-top-anchor">
+        <AppBar
+          position="fixed"
+          className={classes.nav}
+          id="back-to-top-anchor"
+        >
           <Toolbar>
             <Link to="/" className="text-white">
               <Typography className={classes.title} variant="h5" noWrap>
@@ -294,12 +298,15 @@ export default function Nav(props) {
           position: "fixed",
           bottom: "20px",
           left: "10px",
-          backgroundColor: "#1d4e89",
-          color: "white",
-          padding: "5px 8px",
-          borderRadius: "5px",
           zIndex: 1000000,
+          /* backgroundColor: "#1d4e89",
+          color: "white",
+          padding: "5px 10px",
+          borderRadius: "5px",
+          
+          border: "1px solid #ffffff33", */
         }}
+        className="btn btn-primary"
       >
         Sobre Nosotros
       </Link>
