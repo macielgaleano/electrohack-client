@@ -1,6 +1,6 @@
 import React from "react";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
-import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
+import AddOutlinedIcon from "@material-ui/icons/AddOutlined";
+import RemoveOutlinedIcon from "@material-ui/icons/RemoveOutlined";
 import "./CartPage.css";
 import { useDispatch } from "react-redux";
 import { addProduct, removeProduct } from "../../Redux/actions/actionsCart";
@@ -29,14 +29,14 @@ export default function CartItem({ item }) {
             <p>{item.description}</p>
           </div>
           <div className="col-lg-2 d-flex justify-content-center align-items-center">
-            <RemoveCircleIcon
+            <RemoveOutlinedIcon
               onClick={() => {
                 dispatch(removeProduct(item));
                 dispatch(decrement(item.price));
               }}
             />
-            <span className="m-2">{item.quantity}</span>
-            <AddCircleIcon
+            <span className="m-4">{item.quantity}</span>
+            <AddOutlinedIcon
               onClick={() => {
                 dispatch(addProduct(item));
                 dispatch(increment(item.price));
