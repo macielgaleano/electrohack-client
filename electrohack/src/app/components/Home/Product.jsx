@@ -53,13 +53,14 @@ export default function Product({ item }) {
                 }}
                 variant="contained"
                 color="secondary"
+                style={{ width: "100%" }}
               >
                 Comprar
                 <ShoppingCartIcon
                   style={{
                     color: green[5000],
-                    fontSize: "18px",
-                    marginRight: "5px",
+                    fontSize: "1rem",
+                    marginLeft: "10px",
                   }}
                 />
               </Button>
