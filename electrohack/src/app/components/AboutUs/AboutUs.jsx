@@ -137,10 +137,10 @@ export default function AboutUs() {
                 <h5 className="card-title">Sebastián César</h5>
                 <p className="card-text" style={{ height: "200px" }}>
                   Personalmente fue mi primer experiencia en un proyecto
-                  completo pasando por Back-End, Front-End y base de datos.
+                  completo, Back-End, Front-End y base de datos.
                   <br />
-                  Quedé muy conforme y con muchas ganas de perfeccionar y pulir
-                  muchas cosas en futuros proyectos
+                  Quedé muy conforme con el equipo y con muchas ganas de
+                  perfeccionar y pulir muchas cosas en futuros proyectos.
                 </p>
                 <a href="https://www.linkedin.com/in/sebastian-cesar">
                   Visitame en LinkedIn
