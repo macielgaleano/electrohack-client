@@ -34,3 +34,8 @@ h2 {
   margin-top: 40px;
   margin-bottom: 20px;
 }
+
+.btn-pay:hover {
+  color: white;
+  background-color: rgb(11, 97, 97);
+}
