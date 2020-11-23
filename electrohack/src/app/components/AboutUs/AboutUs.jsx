@@ -18,7 +18,7 @@ export default function AboutUs() {
               <p className="lead text-white">
                 ElectroHack es un e-commerce que desarrollamos como proyecto
                 final del Coding Bootcamp en Hack-Academy, en los 3 meses de
-                duración del curso utilizamos muchas tecnologías.
+                duración del curso utilizamos distintas tecnologías.
               </p>
               <p className="lead text-white">
                 Para este proyecto utilizamos las <strong>siguientes:</strong>
