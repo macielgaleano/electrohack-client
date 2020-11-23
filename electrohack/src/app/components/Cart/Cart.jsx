@@ -81,7 +81,7 @@ export default function Cart() {
           }}
           className="btn btn-pay active"
         >
-          Total: $ {Math.round(total)} | Pagar
+          Total: $ {Math.round(total)}|Pagar
         </button>
       </>
     );
