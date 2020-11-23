@@ -72,23 +72,17 @@ export default function Cart() {
               return <CartItem key={item.name} item={item} />;
             })}
         </div>
-        <div className="pay-box">
-          <h5>TOTAL DEL CARRITO</h5>
-          <p>
-            Total : $ <strong>{Math.round(total)}</strong>
-          </p>
-          <button
-            onClick={() => {
-              sendOrder(cart, total);
-              dispatch(restartCart([]));
-              dispatch(restartTotal());
-            }}
-            className="btn btn-info active"
-            style={{ width: "100%" }}
-          >
-            Pagar
-          </button>
-        </div>
+
+        <button
+          onClick={() => {
+            sendOrder(cart, total);
+            dispatch(restartCart([]));
+            dispatch(restartTotal());
+          }}
+          className="btn btn-pay active"
+        >
+          Total: $ {Math.round(total)} | Pagar
+        </button>
       </>
     );
   }
