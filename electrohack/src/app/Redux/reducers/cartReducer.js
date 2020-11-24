@@ -9,16 +9,7 @@ function cartReducer(state = [], action) {
 
       if (!addingProduct) {
         action.payload.quantity = 1;
-        return [...state, action.payload].sort(function (a, b) {
-          if (a.name > b.name) {
-            return 1;
-          }
-          if (a.name < b.name) {
-            return -1;
-          }
-          // a must be equal to b
-          return 0;
-        });
+        return [...state, action.payload].sort(sortCart);
       } else {
         const newState = state.filter(
           (item) => item.name !== addingProduct.name
