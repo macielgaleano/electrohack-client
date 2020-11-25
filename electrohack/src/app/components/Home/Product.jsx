@@ -47,6 +47,7 @@ export default function Product({ item }) {
             <p className="price text-dark"> ${Math.round(item.price)}</p>
             <div>
               <Button
+                endIcon={<ShoppingCartIcon />}
                 onClick={() => {
                   dispatch(addProduct(item));
                   dispatch(increment(item.price));
@@ -56,13 +57,6 @@ export default function Product({ item }) {
                 style={{ width: "100%" }}
               >
                 Comprar
-                <ShoppingCartIcon
-                  style={{
-                    color: green[5000],
-                    fontSize: "1rem",
-                    marginLeft: "10px",
-                  }}
-                />
               </Button>
             </div>
           </div>
