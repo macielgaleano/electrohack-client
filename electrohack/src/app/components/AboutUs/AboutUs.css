@@ -11,3 +11,19 @@
 li {
   text-decoration: none;
 }
+
+.lists {
+  list-style: square;
+  text-align: justify;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .text-dev {
+    font-size: 0.7rem;
+    width: 100%;
+  }
+  .card-responsive {
+    width: 100%;
+  }
+}

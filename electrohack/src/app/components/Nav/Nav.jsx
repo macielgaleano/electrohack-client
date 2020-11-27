@@ -12,6 +12,7 @@ import ListIcon from "@material-ui/icons/List";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import HomeIcon from "@material-ui/icons/Home";
 import SettingsIcon from "@material-ui/icons/Settings";
 import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
@@ -190,11 +191,7 @@ export default function Nav(props) {
   return (
     <div>
       <div className={classes.nav}>
-        <AppBar
-          position="fixed"
-          className={classes.nav}
-          id="back-to-top-anchor"
-        >
+        <AppBar position="fixed" className={classes.nav} id="back-to-top-anchor">
           <Toolbar>
             <Link to="/" className="text-white">
               <Typography className={classes.title} variant="h5" noWrap>
@@ -241,6 +238,12 @@ export default function Nav(props) {
                 </Link>
               </Badge>
             </IconButton>
+            <IconButton aria-label="show 4 new mails" color="inherit">
+              <Link to="/" className="text-white" style={{ textDecoration: "none" }}>
+                <HomeIcon />
+              </Link>
+            </IconButton>
+
             <div className={classes.sectionDesktop}>
               <IconButton
                 aria-label="show 17 new notifications"
@@ -299,12 +302,6 @@ export default function Nav(props) {
           bottom: "20px",
           left: "10px",
           zIndex: 1000000,
-          /* backgroundColor: "#1d4e89",
-          color: "white",
-          padding: "5px 10px",
-          borderRadius: "5px",
-          
-          border: "1px solid #ffffff33", */
         }}
         className="btn btn-primary"
       >
