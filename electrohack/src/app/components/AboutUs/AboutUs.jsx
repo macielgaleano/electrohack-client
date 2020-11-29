@@ -204,7 +204,7 @@ export default function AboutUs() {
               />
               <div className="card-body">
                 <h5 className="card-title">Martín Magnone</h5>
-                <p className="card-text text-dev" style={{ height: "250px" }}>
+                <p className="card-text text-dev" style={{ height: "20px" }}>
                   Este es el primer proyecto grande en el que trabajo. Fue una experiencia
                   buenísima. Formamos un gran equipo y nos complementamos de una gran
                   manera. Estoy muy contento con el trabajo realizado hasta el momento.
