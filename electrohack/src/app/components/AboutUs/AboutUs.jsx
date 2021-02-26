@@ -149,7 +149,7 @@ export default function AboutUs() {
               <img
                 alt="Imagen"
                 style={{ height: "300px" }}
-                src="/img/seba.png"
+                src="/seba.png"
                 className="card-img-top"
               />
               <div className="card-body card-responsive">
