@@ -149,7 +149,7 @@ export default function AboutUs() {
               <img
                 alt="Imagen"
                 style={{ height: "300px" }}
-                src="https://media-exp1.licdn.com/dms/image/C4E03AQEbyabDp8TpmQ/profile-displayphoto-shrink_200_200/0?e=1611187200&v=beta&t=O7AnHyyhjm0IsV98sy-TOa98pyljWq9TWwjsRA9ZGaA"
+                src="/img/seba.png"
                 className="card-img-top"
               />
               <div className="card-body card-responsive">
